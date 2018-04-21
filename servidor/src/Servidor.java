@@ -2,7 +2,7 @@ import java.io.*;
 import java.net.*;
 import java.util.Properties;
 
-public class Servidor
+public class Servidor implements Runnable
 {
     public static Properties getProp() throws IOException {
         Properties props = new Properties();
@@ -12,8 +12,11 @@ public class Servidor
 
     }
 
-    public static void main(String args[]) throws Exception
-    {
+    @Override
+    public void run() {
+    try {
+
+
         String port;
 
         Properties prop = getProp();
@@ -22,14 +25,13 @@ public class Servidor
         int porta = Integer.parseInt(port);
 
         DatagramSocket serverSocket = new DatagramSocket(porta);
-        byte[] receiveData = new byte[1400];
-        byte[] sendData = new byte[1400];
-        while(true)
-        {
+        while (true) {
+            byte[] receiveData = new byte[1400];
+            byte[] sendData = new byte[1400];
             System.out.println("Server Running");
             DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
             serverSocket.receive(receivePacket);
-            String sentence = new String( receivePacket.getData());
+            String sentence = new String(receivePacket.getData());
             System.out.println("Recebido: " + sentence);
             InetAddress IPAddress = receivePacket.getAddress();
             int port_defined = receivePacket.getPort();
@@ -37,6 +39,10 @@ public class Servidor
             sendData = capitalizedSentence.getBytes();
             DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
             serverSocket.send(sendPacket);
+        }
+
+        }catch(Exception e){
+        System.out.println("Erro: " + e.getMessage());
         }
     }
 }
