@@ -32,21 +32,23 @@ public class Cliente implements Runnable{
                 int porta = Integer.parseInt(port);
 
 
-                System.out.println("Digite algo para enviar ao servidor");
-                BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
-                DatagramSocket clientSocket = new DatagramSocket();
-                InetAddress IPAddress = InetAddress.getByName(host);
-                byte[] sendData = new byte[1400];
-                byte[] receiveData = new byte[1400];
-                String sentence = inFromUser.readLine();
-                sendData = sentence.getBytes();
-                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
-                clientSocket.send(sendPacket);
-                DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
-                clientSocket.receive(receivePacket);
-                String modifiedSentence = new String(receivePacket.getData());
-                System.out.println("Resposta do Servidor:" + modifiedSentence);
-                clientSocket.close();
+                    System.out.println("Digite algo para enviar ao servidor");
+                    BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
+                    DatagramSocket clientSocket = new DatagramSocket();
+                    InetAddress IPAddress = InetAddress.getByName(host);
+                    byte[] sendData = new byte[1400];
+                    byte[] receiveData = new byte[1400];
+                    String sentence = inFromUser.readLine();
+                    sendData = sentence.getBytes();
+                    DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
+                    clientSocket.send(sendPacket);
+                    DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+                    clientSocket.receive(receivePacket);
+                    String modifiedSentence = new String(receivePacket.getData());
+                    System.out.println("Resposta do Servidor:" + modifiedSentence);
+                    clientSocket.close();
+
+
             } catch (Exception e){
                  System.out.println("Erro: " + e.getMessage());
              }
