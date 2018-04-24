@@ -2,12 +2,14 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.util.Map;
 import java.util.Properties;
 
-public class Cliente implements Runnable{
+public class Client {
 
 
             public static Properties getProp () throws IOException {
@@ -18,8 +20,9 @@ public class Cliente implements Runnable{
 
             }
 
-            @Override
-            public void run(){
+
+
+            public void client(){
 
              try {
                 String host;
@@ -27,8 +30,8 @@ public class Cliente implements Runnable{
 
                 Properties prop = getProp();
 
-                host = prop.getProperty("prop.server.host");
-                port = prop.getProperty("prop.server.port");
+                host = prop.getProperty("prop.client.host");
+                port = prop.getProperty("prop.client.port");
                 int porta = Integer.parseInt(port);
 
 
@@ -42,6 +45,7 @@ public class Cliente implements Runnable{
                     sendData = sentence.getBytes();
                     DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
                     clientSocket.send(sendPacket);
+
                     DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
                     clientSocket.receive(receivePacket);
                     String modifiedSentence = new String(receivePacket.getData());
@@ -53,6 +57,9 @@ public class Cliente implements Runnable{
                  System.out.println("Erro: " + e.getMessage());
              }
         }
+
+
+
 
 }
 

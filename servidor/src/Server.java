@@ -1,8 +1,10 @@
 import java.io.*;
+import java.math.BigInteger;
 import java.net.*;
+import java.util.Map;
 import java.util.Properties;
 
-public class Servidor implements Runnable
+public class Server
 {
     public static Properties getProp() throws IOException {
         Properties props = new Properties();
@@ -12,8 +14,8 @@ public class Servidor implements Runnable
 
     }
 
-    @Override
-    public void run() {
+
+    public void server() {
     try {
 
 
@@ -35,11 +37,20 @@ public class Servidor implements Runnable
             System.out.println("Recebido: " + sentence);
             InetAddress IPAddress = receivePacket.getAddress();
             int port_defined = receivePacket.getPort();
-            String capitalizedSentence = sentence.toUpperCase();
-            sendData = capitalizedSentence.getBytes();
+            //1
+            //ByteArrayOutputStream a = new ByteArrayOutputStream();
+            //ObjectOutputStream b = new ObjectOutputStream(a);
+            //b.writeObject(data2);
+
+
             DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
             serverSocket.send(sendPacket);
+
+
         }
+
+
+
 
         }catch(Exception e){
         System.out.println("Erro: " + e.getMessage());
