@@ -53,7 +53,9 @@ public class Server {
                     sendData = capitalizedSentence.getBytes();
                     DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
                     serverSocket.send(sendPacket);
-
+                    Object object = message;
+                    queue.add(object);
+                    System.out.println("Fila: " + queue);
 
 
 
