@@ -51,24 +51,21 @@ public class Client2 {
     }
     */
 
-    public Map<BigInteger, String> receberDados() throws Exception {
+    public String receberDados() throws Exception {
 
-            Map<BigInteger, String> bigIntegerStringMap = new HashMap<>();
+            //Map<BigInteger, String> bigIntegerStringMap = new HashMap<>();
 
-            Scanner ler = new Scanner(System.in);
-            System.out.print("Digite uma chave: ");
-            BigInteger chave = ler.nextBigInteger();
+            //BigInteger chave = BigInteger.ONE;
 
             System.out.println("\nDigite algo para enviar ao servidor :");
             BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
             String sentence = inFromUser.readLine();
 
 
-            bigIntegerStringMap.put(chave, sentence);
-            System.out.println("\nMensagem a ser enviada: " + bigIntegerStringMap);
 
 
-       return bigIntegerStringMap;
+
+       return sentence;
 
 
 
@@ -80,7 +77,7 @@ public class Client2 {
             String host;
             String port;
 
-            Map<BigInteger, String> bigIntegerStringMap = receberDados();
+            String sentence = receberDados();
 
             Properties prop = getProp();
 
@@ -92,10 +89,7 @@ public class Client2 {
             InetAddress IPAddress = InetAddress.getByName(host);
             byte[] sendData = new byte[1400];
             byte[] receiveData = new byte[1400];
-
-            ByteArrayOutputStream a = new ByteArrayOutputStream();
-            ObjectOutputStream b = new ObjectOutputStream(a);
-            b.writeObject(bigIntegerStringMap);
+            sendData = sentence.getBytes();
             DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
             clientSocket.send(sendPacket);
 

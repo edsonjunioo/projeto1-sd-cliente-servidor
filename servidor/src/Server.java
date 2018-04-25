@@ -1,8 +1,10 @@
 import java.io.*;
 import java.math.BigInteger;
 import java.net.*;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Queue;
 
 public class Server
 {
@@ -35,16 +37,20 @@ public class Server
             serverSocket.receive(receivePacket);
             String sentence = new String(receivePacket.getData());
             System.out.println("Recebido: " + sentence);
+            BigInteger chave = BigInteger.ONE;
             InetAddress IPAddress = receivePacket.getAddress();
             int port_defined = receivePacket.getPort();
-            //1
-            //ByteArrayOutputStream a = new ByteArrayOutputStream();
-            //ObjectOutputStream b = new ObjectOutputStream(a);
-            //b.writeObject(data2);
-
-
+            String capitalizedSentence = sentence.toUpperCase();
+            sendData = capitalizedSentence.getBytes();
             DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
             serverSocket.send(sendPacket);
+
+
+            Map<BigInteger, String> mensagem = new HashMap<>();
+            mensagem.put(chave, sentence);
+            System.out.println("Mapa fila :" + mensagem);
+
+
 
 
         }
