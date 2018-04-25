@@ -1,3 +1,5 @@
+
+
 import java.io.*;
 import java.math.BigInteger;
 import java.net.*;
@@ -30,6 +32,8 @@ public class Server {
             BigInteger key = BigInteger.ZERO;
             Queue<Object> queue = new LinkedList<Object>();
 
+
+
             while (true) {
                 byte[] receiveData = new byte[1400];
                 byte[] sendData = new byte[1400];
@@ -45,6 +49,9 @@ public class Server {
                 //DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
                 //serverSocket.send(sendPacket);
 
+
+
+
                 if(key.compareTo(LIMIT) < 0) {
                     key = key.add(new BigInteger("1"));
                     Map<BigInteger,String> message = new HashMap<>();
@@ -55,7 +62,26 @@ public class Server {
                     serverSocket.send(sendPacket);
                     Object object = message;
                     queue.add(object);
-                    System.out.println("Fila: " + queue);
+                    //System.out.println("Fila: " + queue);
+
+                    System.out.println("\nDigite umas das opcoes\n1-visualizar fila\n2-atualizar fila\n3-remover item da fila\n4-sair");
+                    int opcao;
+                    Scanner ler = new Scanner(System.in);
+                    opcao = ler.nextInt();
+
+                    if (opcao == 1){
+                        System.out.println("Fila: " + queue);
+                    }
+
+                    if (opcao == 3){
+                        Object removehead = queue.remove();
+                        System.out.println("Fila" + queue);
+
+                    } else {
+                        System.out.println("Fila" + queue);
+                    }
+
+
 
 
 

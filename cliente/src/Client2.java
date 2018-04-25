@@ -53,10 +53,6 @@ public class Client2 {
 
     public String receberDados() throws Exception {
 
-            //Map<BigInteger, String> bigIntegerStringMap = new HashMap<>();
-
-            //BigInteger chave = BigInteger.ONE;
-
             System.out.println("\nDigite algo para enviar ao servidor :");
             BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
             String sentence = inFromUser.readLine();
