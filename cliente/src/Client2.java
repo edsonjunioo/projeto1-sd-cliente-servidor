@@ -83,12 +83,11 @@ public class Client2 {
 
             DatagramSocket clientSocket = new DatagramSocket();
             InetAddress IPAddress = InetAddress.getByName(host);
-            byte[] sendData = new byte[1400];
-            byte[] receiveData = new byte[1400];
+            byte[] sendData = new byte[20];
+            byte[] receiveData = new byte[20];
             sendData = sentence.getBytes();
             DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
             clientSocket.send(sendPacket);
-
             DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
             clientSocket.receive(receivePacket);
             String modifiedSentence = new String(receivePacket.getData());
