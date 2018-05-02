@@ -60,7 +60,7 @@ public class Server {
 
             DatagramSocket serverSocket = new DatagramSocket(porta);
             logger.info("Conexão do servidor iniciada");
-            BigInteger LIMIT = new BigInteger("20");
+            BigInteger LIMIT = new BigInteger("2048");
             BigInteger key = BigInteger.ZERO;
             Queue<Object> queue = instaciaFila();
 
