@@ -60,15 +60,15 @@ public class Server {
 
             DatagramSocket serverSocket = new DatagramSocket(porta);
             logger.info("Conexão do servidor iniciada");
-            BigInteger LIMIT = new BigInteger("4");
+            BigInteger LIMIT = new BigInteger("20");
             BigInteger key = BigInteger.ZERO;
             Queue<Object> queue = instaciaFila();
 
 
 
             while (true) {
-                byte[] receiveData = new byte[20];
-                byte[] sendData = new byte[20];
+                byte[] receiveData = new byte[1400];
+                byte[] sendData = new byte[1400];
                 System.out.println("Server Running");
                 DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
                 serverSocket.receive(receivePacket);
@@ -86,7 +86,7 @@ public class Server {
 
 
                 if(key.compareTo(LIMIT) < 0) {
-                    logger.info("Fila Criada/Atualizada");
+                    logger.info("1 - Fila Criada");
                     key = key.add(new BigInteger("1"));
                     Map<BigInteger, String> message = new HashMap<>();
                     message.put(key, sentence);
@@ -97,8 +97,8 @@ public class Server {
                     serverSocket.send(sendPacket);
                     Object object = message;
                     queue.add(object);
-                    logger.info("Fila: " + queue);
-                    System.out.println("Queue: " + queue);
+                    logger.info("Fila atualizada: " + queue);
+                    //System.out.println("Queue: " + queue);
 
                     System.out.println("\nDigite umas das opcoes\n2-visualizar fila\n3-remove head queue\n4-update queue\n5-zerar fila e reinicializar");
                     int opcao;
@@ -106,11 +106,12 @@ public class Server {
                     opcao = ler.nextInt();
 
                     if (opcao == 2) {
-                        System.out.println("Queue: " + queue);
+                        System.out.println("Opção 2 - visualizar fila");
                         logger.info("visualização" + queue);
                     }
 
                     if (opcao == 3) {
+                        System.out.println("Opção 3 - remove head queue");
                         Object removehead = queue.remove();
                         //System.out.println("Queue" + queue);
                         logger.info("Remoção realizada");
@@ -119,7 +120,8 @@ public class Server {
                     }
 
                     if (opcao == 5){
-                        //final Queue<Object> queueBackup = ;
+                        System.out.println("Opção 5 - zerar fila e reinicializar");
+                        logger.info("Mapa recuperado" + queue);
                         queue.clear();
                         logger.info("Fila Zerada e Reinicializada" + queue);
                         //logger.info("Mapa recuperado" + queueBackup);
@@ -145,11 +147,6 @@ public class Server {
             //Logger logger = process();
             //logger.error("Erro" + e.getMessage());
             System.out.println("Erro" + e.getMessage());
-        } finally {
-            Queue<Object> queue = instaciaFila();
-            Logger logger = process();
-            logger.info("Mapa Fila: " + queue);
-
         }
 
     }

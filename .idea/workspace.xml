@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dd0e35e-f8ab-4b6f-b310-55066ab04313" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/cliente/src/RunClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/RunClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log4j-application-server.log" beforeDir="false" afterPath="$PROJECT_DIR$/log4j-application-server.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/src/Server.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,7 +15,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RunServer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RunServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/servidor/src/RunServer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -68,23 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Thread1.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Thread1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/servidor/src/Thread1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
               <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/servidor/src/Server.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="62" column="49" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -167,9 +155,9 @@
         <option value="$PROJECT_DIR$/servidor/src/Thread2.java" />
         <option value="$PROJECT_DIR$/cliente/src/Thread2.java" />
         <option value="$PROJECT_DIR$/cliente/src/Thread1.java" />
-        <option value="$PROJECT_DIR$/servidor/src/Server.java" />
         <option value="$PROJECT_DIR$/cliente/src/RunClient.java" />
         <option value="$PROJECT_DIR$/servidor/src/RunServer.java" />
+        <option value="$PROJECT_DIR$/servidor/src/Server.java" />
       </list>
     </option>
   </component>
@@ -292,7 +280,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.RunServer">
+  <component name="RunManager" selected="Application.RunClient">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -378,8 +366,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RunServer" />
         <item itemvalue="Application.RunClient" />
+        <item itemvalue="Application.RunServer" />
       </list>
     </recent_temporary>
   </component>
@@ -418,7 +406,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119976000" />
+    <option name="totallyTimeSpent" value="122784000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -431,6 +419,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="-4" width="1315" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970452" />
@@ -517,49 +506,49 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>sendData = capitalizedS</expression-string>
+        <expression-string />
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>sendData = capitalizedSentence.getBytes()</expression-string>
+        <expression-string />
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>sendData = capitalizedSentence.getBytes();</expression-string>
+        <expression-string />
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>sendData = capitalizedSentence.length()</expression-string>
+        <expression-string />
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>String modifiedSentence = new String(receivePacket.getData());</expression-string>
+        <expression-string />
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);</expression-string>
+        <expression-string />
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>String capitalizedSentence = sentence.equalsIgnoreCase(&quot; &quot;);</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>javafx.scene.chart.PieChart</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>String capitalizedSentence = sentence.toUpperCase();</expression-string>
+        <expression-string />
         <language-id>JAVA</language-id>
         <custom-info>javafx.scene.chart.PieChart</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>String capitalizedSentence = sentence.equalsIgnoreCase(T);</expression-string>
+        <expression-string />
+        <language-id>JAVA</language-id>
+        <custom-info>javafx.scene.chart.PieChart</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string />
         <language-id>JAVA</language-id>
         <custom-info>javafx.scene.chart.PieChart</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -837,16 +826,6 @@
         <state relative-caret-position="-3641" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/src/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="62" column="49" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/Client2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -890,17 +869,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/src/Thread1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/servidor/src/RunServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/src/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="149" column="10" selection-start-line="149" selection-start-column="10" selection-end-line="149" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/src/Thread1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
