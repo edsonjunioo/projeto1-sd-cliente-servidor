@@ -5,7 +5,7 @@ public class Thread1 extends Client2 implements Runnable {
 
 
     @Override
-    public void run() {
+    synchronized public void run() {
 
         try {
 
@@ -15,8 +15,6 @@ public class Thread1 extends Client2 implements Runnable {
 
         } catch (Exception e){
             System.out.println("Erro" + e.getMessage());
-        } finally {
-
         }
     }
 }
