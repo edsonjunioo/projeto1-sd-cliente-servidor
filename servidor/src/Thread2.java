@@ -1,4 +1,4 @@
-
+/*
 
 public class Thread2 extends Server implements Runnable {
 
@@ -8,3 +8,4 @@ public class Thread2 extends Server implements Runnable {
         super.process();
     }
 }
+*/

@@ -8,10 +8,10 @@ public class RunClient {
 
 
         //Client2
-        Thread1 thread1 = new Thread1();
-        Thread t1 = new Thread(thread1);
-        t1.start();
-        t1.stop();
+        //Thread1 thread1 = new Thread1();
+        //Thread t1 = new Thread(thread1);
+        //t1.start();
+        //t1.stop();
 
 
 
