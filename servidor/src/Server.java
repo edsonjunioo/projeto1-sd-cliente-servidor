@@ -22,7 +22,6 @@ public class Server {
     public void server() {
 
 
-
         try {
 
             final Logger logger = Logger.getLogger("server");
@@ -41,9 +40,11 @@ public class Server {
             BigInteger key = BigInteger.ZERO;
             Map<BigInteger, String> map = new HashMap<>();
 
-
+            Queue<Object> queue = new LinkedList<Object>();
 
             while (true || key.compareTo(LIMIT) < 0) {
+
+
                 byte[] receiveData = new byte[20];
                 byte[] sendData = new byte[20];
                 System.out.println("\nServer Running");
@@ -55,15 +56,34 @@ public class Server {
                 InetAddress IPAddress = receivePacket.getAddress();
                 int port_defined = receivePacket.getPort();
                 String capitalizedSentence = sentence.toUpperCase();
+
+
+                queue.add(sentence);
                 //sendData = capitalizedSentence.getBytes();
                 //DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
                 //serverSocket.send(sendPacket);
-                key = key.add(new BigInteger("1"));
-                map.put(key, sentence);
-                logger.info("Mapa" + map);
-                sendData = capitalizedSentence.getBytes();
-                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
-                serverSocket.send(sendPacket);
+                if(sentence.contains(""))
+
+
+                if(sentence.contains("create")) {
+
+                    queue.add(sentence);
+
+                } else {
+                    key = key.add(new BigInteger("1"));
+                    map.put(key, sentence);
+                    logger.info("Mapa" + map);
+                    sendData = capitalizedSentence.getBytes();
+                    DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
+                    serverSocket.send(sendPacket);
+
+                }
+
+
+                //logger.info("Mapa" + map);
+                //sendData = capitalizedSentence.getBytes();
+                //DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
+                //serverSocket.send(sendPacket);
 
 
             }

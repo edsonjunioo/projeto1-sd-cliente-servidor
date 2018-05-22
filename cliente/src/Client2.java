@@ -8,12 +8,7 @@ import java.util.*;
 import org.apache.log4j.Logger;
 
 public class Client2 {
-    /*
-    DatagramSocket client = null;
-    Socket c = null;
-    PrintStream ps = null;
-    private boolean verifica_conexao = false;
-    */
+
 
     public static Properties getProp() throws Exception{
         Properties props = new Properties();
@@ -22,58 +17,6 @@ public class Client2 {
         return props;
 
     }
-
-
-
-    /*
-
-    public void criarConection() {
-        try {
-            String host;
-            String port;
-
-            Properties prop = getProp();
-
-            host = prop.getProperty("prop.client.host");
-            port = prop.getProperty("prop.client.port");
-            int porta = Integer.parseInt(port);
-            client = new DatagramSocket(porta);
-            verifica_conexao = true;
-            System.out.println("Conexão Realizada");
-
-        } catch (IOException e) {
-            System.out.println("Algum problema ocorreu para criar ou receber o socket.");
-        }
-
-
-    }
-    */
-
-    /*
-    public String receberDados() throws Exception {
-
-
-
-            System.out.println("\nDigite algo para enviar ao servidor :");
-            BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
-            String sentence = inFromUser.readLine();
-            BigInteger key = BigInteger.ONE;
-
-            Map<BigInteger,String> map = new HashMap<>();
-            map.put(key,sentence);
-            System.out.println("mapa" + map);
-
-
-
-
-
-       return sentence;
-
-
-
-    }
-
-    */
 
     public void enviarDados(){
 
@@ -89,7 +32,7 @@ public class Client2 {
             port = prop.getProperty("prop.client.port");
             int porta = Integer.parseInt(port);
             Queue<Object> queue = new LinkedList<Object>();
-            logger.info("Fila" + queue);
+            logger.info("Fila de comandos" + queue);
             //System.out.println("Digite 1 para incluir nova mensagem ao mapa ou 2 para CRUD");
             //Scanner ler = new Scanner(System.in);
             //int option = ler.nextInt();
@@ -97,22 +40,23 @@ public class Client2 {
             while (true) {
 
                 System.out.println("Digite uma opção\n");
-                System.out.println("1 - create\n");
-                System.out.println("2 - read\n");
-                System.out.println("3 - update\n");
-                System.out.println("4 - delete\n");
+                System.out.println("create\n");
+                System.out.println("read\n");
+                System.out.println("update\n");
+                System.out.println("delete\n");
                 Scanner ler = new Scanner(System.in);
-                int option = ler.nextInt();
+                String option = ler.next();
 
 
 
-                if(option == 1) {
+
                     System.out.println("\nDigite algo para enviar :");
                     BufferedReader inFromUser2 = new BufferedReader(new InputStreamReader(System.in));
                     String sentence = inFromUser2.readLine();
 
-                    queue.add(sentence);
-                    logger.info("Fila" + queue);
+
+                    queue.add(option);
+                    System.out.println("Fila" + queue);
 
 
                     DatagramSocket clientSocket = new DatagramSocket();
@@ -120,10 +64,12 @@ public class Client2 {
                     byte[] sendOption = new byte[20];
                     byte[] sendData = new byte[20];
                     byte[] receiveData = new byte[20];
+                    sendOption = option.getBytes();
                     sendData = sentence.getBytes();
-
                     DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
+                    DatagramPacket sendPacket2 = new DatagramPacket(sendOption, sendOption.length, IPAddress, porta);
                     clientSocket.send(sendPacket);
+                    clientSocket.send(sendPacket2);
                     DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
                     clientSocket.receive(receivePacket);
                     String modifiedSentence = new String(receivePacket.getData());
@@ -132,7 +78,11 @@ public class Client2 {
 
                 }
 
-            }
+
+
+
+
+
 
 
 
