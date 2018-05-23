@@ -38,7 +38,7 @@ public class Client2 {
             //int option = ler.nextInt();
 
             while (true) {
-
+                System.out.println("Client Running");
                 System.out.println("Digite uma opção\n");
                 System.out.println("create\n");
                 System.out.println("read\n");
@@ -47,18 +47,24 @@ public class Client2 {
                 Scanner ler = new Scanner(System.in);
                 String option = ler.next();
 
-
-                if(option.contains("delele")){
-                    System.out.println("Digite uma chave a remover");
+                if(option.contains("create")) {
+                    System.out.println("\nDigite algo para enviar com a chave no seguinte formato: crud-cre/chave/msg");
                 }
 
-                if(option.contains("create")) {
-                    System.out.println("\nDigite algo para enviar :");
+                if(option.contains("read")){
+                    System.out.println("\nDeseja visualizar o mapa?");
                 }
 
                 if(option.contains("update")){
-                    System.out.println("\nDigite chave a atualizar:");
+                    System.out.println("\nDigite chave a atualizar no seguinte formato crud-upd/x/ onde x é a chave:");
                 }
+
+                if(option.contains("delete")){
+                    System.out.println("\nDigite uma chave a remover no seguinte formato crud-del/x/ onde x é a chave:\"");
+                }
+
+
+
 
                     BufferedReader inFromUser2 = new BufferedReader(new InputStreamReader(System.in));
                     String sentence = inFromUser2.readLine();
@@ -77,12 +83,12 @@ public class Client2 {
                     sendData = sentence.getBytes();
                     DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
                     DatagramPacket sendPacket2 = new DatagramPacket(sendOption, sendOption.length, IPAddress, porta);
-                    clientSocket.send(sendPacket);
                     clientSocket.send(sendPacket2);
+                    clientSocket.send(sendPacket);
                     DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
                     clientSocket.receive(receivePacket);
                     String modifiedSentence = new String(receivePacket.getData());
-                    System.out.println("Resposta do Servidor:" + modifiedSentence + " recebido com sucesso");
+                    System.out.println("Resposta do Servidor:" + modifiedSentence + " recebido com sucesso\n");
                     //clientSocket.close();
 
                 }

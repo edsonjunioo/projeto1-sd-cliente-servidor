@@ -56,34 +56,79 @@ public class Server {
                 InetAddress IPAddress = receivePacket.getAddress();
                 int port_defined = receivePacket.getPort();
                 String capitalizedSentence = sentence.toUpperCase();
-
-
-                queue.add(sentence);
                 //sendData = capitalizedSentence.getBytes();
                 //DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
                 //serverSocket.send(sendPacket);
+                if(sentence.contains("create") || sentence.contains("crud-cre")) {
+
+                    if (sentence.contains("create")) {
+                        queue.add(sentence);
+                        logger.info("Fila de comandos" + queue);
+                    }
+
+                    if(sentence.contains("crud-cre")) {
+                        String[] url = sentence.split("/");
+
+                        int chave = Integer.parseInt(url[1]);
+                        BigInteger key1 = BigInteger.valueOf(chave);
+                        map.put(key1, url[2]);
+
+                    }
+
+                }
+
+
+
                 if(sentence.contains("read")){
-                    sendData = capitalizedSentence.getBytes();
+
+                    if (sentence.contains("read")) {
+                        queue.add(sentence);
+                        logger.info("Fila de comandos" + queue);
+                    }
+
+                    if (sentence.contains("sim")){
+                        logger.info(map);
+                    }
+
 
                 }
 
-                if(sentence.contains("delete")){
+                if(sentence.contains("update") || sentence.contains("crud-upd")){
+
+                    if (sentence.contains("update")) {
+                        queue.add(sentence);
+                        logger.info("Fila de comandos" + queue);
+                    }
+
+                    if (sentence.contains("crud-upd")) {
+                        String[] url = sentence.split("/");
+
+                        int chave = Integer.parseInt(url[1]);
+                        BigInteger key1 = BigInteger.valueOf(chave);
+                        map.remove(key1);
+                        map.put(key1,url[2]);
+                    }
 
                 }
 
-                if(sentence.contains("create")) {
+                if(sentence.contains("delete") || sentence.contains("crud-del")){
 
-                    queue.add(sentence);
+                    if (sentence.contains("delete")) {
+                        queue.add(sentence);
+                        logger.info("Fila de comandos" + queue);
+                    }
 
-                } else {
-                    key = key.add(new BigInteger("1"));
-                    map.put(key, sentence);
-                    logger.info("Mapa" + map);
-                    sendData = capitalizedSentence.getBytes();
-                    DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
-                    serverSocket.send(sendPacket);
+                    if (sentence.contains("crud-del")) {
+                        String[] url = sentence.split("/");
+
+                        int chave = Integer.parseInt(url[1]);
+                        BigInteger key1 = BigInteger.valueOf(chave);
+                        map.remove(key1);
+                    }
 
                 }
+
+
 
 
                 //logger.info("Mapa" + map);
@@ -91,6 +136,10 @@ public class Server {
                 //DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
                 //serverSocket.send(sendPacket);
 
+                logger.info("Mapa" + map);
+                sendData = capitalizedSentence.getBytes();
+                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
+                serverSocket.send(sendPacket);
 
             }
 
