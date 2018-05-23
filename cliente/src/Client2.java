@@ -48,9 +48,18 @@ public class Client2 {
                 String option = ler.next();
 
 
+                if(option.contains("delele")){
+                    System.out.println("Digite uma chave a remover");
+                }
 
-
+                if(option.contains("create")) {
                     System.out.println("\nDigite algo para enviar :");
+                }
+
+                if(option.contains("update")){
+                    System.out.println("\nDigite chave a atualizar:");
+                }
+
                     BufferedReader inFromUser2 = new BufferedReader(new InputStreamReader(System.in));
                     String sentence = inFromUser2.readLine();
 

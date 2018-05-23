@@ -62,8 +62,14 @@ public class Server {
                 //sendData = capitalizedSentence.getBytes();
                 //DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
                 //serverSocket.send(sendPacket);
-                if(sentence.contains(""))
+                if(sentence.contains("read")){
+                    sendData = capitalizedSentence.getBytes();
 
+                }
+
+                if(sentence.contains("delete")){
+
+                }
 
                 if(sentence.contains("create")) {
 
