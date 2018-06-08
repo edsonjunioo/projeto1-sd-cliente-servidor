@@ -39,29 +39,31 @@ public class Client2 {
 
             while (true) {
                 System.out.println("Client Running");
-                System.out.println("Digite uma opção\n");
-                System.out.println("create\n");
-                System.out.println("read\n");
-                System.out.println("update\n");
-                System.out.println("delete\n");
+                System.out.println("Digite uma opção para iniciar o CRUD\n");
+                System.out.println("1 - create\n");
+                System.out.println("2 - read\n");
+                System.out.println("3 - update\n");
+                System.out.println("4 - delete\n");
                 Scanner ler = new Scanner(System.in);
-                String option = ler.next();
+                int option = ler.nextInt();
 
-                if(option.contains("create")) {
-                    System.out.println("\nDigite algo para enviar com a chave no seguinte formato: crud-cre/chave/msg");
+                if(option == 1) {
+                    System.out.println("\nDigite algo para enviar com a chave no seguinte formato: create/chave/msg");
                 }
 
-                if(option.contains("read")){
-                    System.out.println("\nDeseja visualizar o mapa?");
+                if(option == 2){
+                    System.out.println("\nPara visualizar o mapa digite read");
                 }
 
-                if(option.contains("update")){
-                    System.out.println("\nDigite chave a atualizar no seguinte formato crud-upd/x/ onde x é a chave:");
+                if(option == 3){
+                    System.out.println("\nDigite chave a atualizar no seguinte formato update/x/msg onde x é a chave a ser atualizada:");
                 }
 
-                if(option.contains("delete")){
-                    System.out.println("\nDigite uma chave a remover no seguinte formato crud-del/x/ onde x é a chave:\"");
+                if(option == 4){
+                    System.out.println("\nDigite uma chave a remover no seguinte formato delete/x/ onde x é a chave:\"");
                 }
+
+
 
 
 
@@ -76,14 +78,14 @@ public class Client2 {
 
                     DatagramSocket clientSocket = new DatagramSocket();
                     InetAddress IPAddress = InetAddress.getByName(host);
-                    byte[] sendOption = new byte[20];
+                    //byte[] sendOption = new byte[20];
                     byte[] sendData = new byte[20];
                     byte[] receiveData = new byte[20];
-                    sendOption = option.getBytes();
+                    //sendOption = option.getBytes();
                     sendData = sentence.getBytes();
                     DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
-                    DatagramPacket sendPacket2 = new DatagramPacket(sendOption, sendOption.length, IPAddress, porta);
-                    clientSocket.send(sendPacket2);
+                    //DatagramPacket sendPacket2 = new DatagramPacket(sendOption, sendOption.length, IPAddress, porta);
+                    //clientSocket.send(sendPacket2);
                     clientSocket.send(sendPacket);
                     DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
                     clientSocket.receive(receivePacket);

@@ -59,97 +59,70 @@ public class Server {
                 //sendData = capitalizedSentence.getBytes();
                 //DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
                 //serverSocket.send(sendPacket);
-                if(sentence.contains("create") || sentence.contains("crud-cre")) {
+                queue.add(sentence);
 
-                    if (sentence.contains("create")) {
-                        queue.add(sentence);
-                        logger.info("Fila de comandos" + queue);
-                    }
+                logger.info(queue);
 
-                    if(sentence.contains("crud-cre")) {
-                        String[] url = sentence.split("/");
 
-                        int chave = Integer.parseInt(url[1]);
-                        BigInteger key1 = BigInteger.valueOf(chave);
-                        map.put(key1, url[2]);
+                if (sentence.contains("create")) {
+                    String[] url = sentence.split("/");
 
-                    }
-
+                    int chave = Integer.parseInt(url[1]);
+                    BigInteger key1 = BigInteger.valueOf(chave);
+                    map.put(key1, url[2]);
                 }
 
 
+                if (sentence.contains("read")) {
 
-                if(sentence.contains("read")){
-
-                    if (sentence.contains("read")) {
-                        queue.add(sentence);
-                        logger.info("Fila de comandos" + queue);
-                    }
-
-                    if (sentence.contains("sim")){
                         logger.info(map);
-                    }
 
 
                 }
 
-                if(sentence.contains("update") || sentence.contains("crud-upd")){
+                if (sentence.contains("update")) {
+                    String[] url = sentence.split("/");
 
-                    if (sentence.contains("update")) {
-                        queue.add(sentence);
-                        logger.info("Fila de comandos" + queue);
-                    }
-
-                    if (sentence.contains("crud-upd")) {
-                        String[] url = sentence.split("/");
-
-                        int chave = Integer.parseInt(url[1]);
-                        BigInteger key1 = BigInteger.valueOf(chave);
-                        map.remove(key1);
-                        map.put(key1,url[2]);
-                    }
-
-                }
-
-                if(sentence.contains("delete") || sentence.contains("crud-del")){
-
-                    if (sentence.contains("delete")) {
-                        queue.add(sentence);
-                        logger.info("Fila de comandos" + queue);
-                    }
-
-                    if (sentence.contains("crud-del")) {
-                        String[] url = sentence.split("/");
-
-                        int chave = Integer.parseInt(url[1]);
-                        BigInteger key1 = BigInteger.valueOf(chave);
-                        map.remove(key1);
-                    }
-
+                    int chave = Integer.parseInt(url[1]);
+                    BigInteger key1 = BigInteger.valueOf(chave);
+                    map.remove(key1);
+                    map.put(key1, url[2]);
                 }
 
 
 
+                if (sentence.contains("delete")) {
+                    String[] url = sentence.split("/");
 
-                //logger.info("Mapa" + map);
-                //sendData = capitalizedSentence.getBytes();
-                //DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
-                //serverSocket.send(sendPacket);
+                    int chave = Integer.parseInt(url[1]);
+                    BigInteger key1 = BigInteger.valueOf(chave);
+                    map.remove(key1);
+                }
 
-                logger.info("Mapa" + map);
-                sendData = capitalizedSentence.getBytes();
-                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
-                serverSocket.send(sendPacket);
 
-            }
 
-        } catch (Exception e) {
-            //Logger logger = process();
-            //logger.error("Erro" + e.getMessage());
-            System.out.println("Erro" + e.getMessage());
+            //logger.info("Mapa" + map);
+            //sendData = capitalizedSentence.getBytes();
+            //DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
+            //serverSocket.send(sendPacket);
+
+            logger.info("Mapa" + map);
+            sendData = capitalizedSentence.getBytes();
+            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
+            serverSocket.send(sendPacket);
+
         }
 
+    } catch(
+    Exception e)
+
+    {
+        //Logger logger = process();
+        //logger.error("Erro" + e.getMessage());
+        System.out.println("Erro" + e.getMessage());
     }
+
+}
 
 
 }
