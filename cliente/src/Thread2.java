@@ -1,7 +1,7 @@
 
 
 
-public class Thread2 extends Client2 implements Runnable {
+public class Thread2 extends Client implements Runnable {
 
     @Override
     public void run(){

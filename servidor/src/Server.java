@@ -59,7 +59,10 @@ public class Server {
                 //sendData = capitalizedSentence.getBytes();
                 //DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
                 //serverSocket.send(sendPacket);
-                queue.add(sentence);
+
+                if(sentence.contains("create") || sentence.contains("read") || sentence.contains("update") || sentence.contains("delete")) {
+                    queue.add(sentence);
+                }
 
                 logger.info(queue);
 

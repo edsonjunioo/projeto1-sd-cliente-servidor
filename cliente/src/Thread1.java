@@ -1,6 +1,6 @@
 
 /*
-public class Thread1 extends Client2 implements Runnable {
+public class Thread1 extends Client implements Runnable {
 
 
 
