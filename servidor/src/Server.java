@@ -36,13 +36,11 @@ public class Server {
 
             DatagramSocket serverSocket = new DatagramSocket(porta);
             logger.info("Conexão do servidor iniciada");
-            BigInteger LIMIT = new BigInteger("5120");
-            BigInteger key = BigInteger.ZERO;
             Map<BigInteger, String> map = new HashMap<>();
 
             Queue<Object> queue = new LinkedList<Object>();
 
-            while (true || key.compareTo(LIMIT) < 0) {
+            while (true) {
 
 
                 byte[] receiveData = new byte[20];
@@ -67,7 +65,7 @@ public class Server {
                 logger.info(queue);
 
 
-                if (sentence.contains("create")) {
+                if (((LinkedList<Object>) queue).getFirst().toString().contains("create")) {
                     String[] url = sentence.split("/");
 
                     int chave = Integer.parseInt(url[1]);
@@ -76,14 +74,15 @@ public class Server {
                 }
 
 
-                if (sentence.contains("read")) {
+                if (((LinkedList<Object>) queue).getFirst().toString().contains("read")) {
 
                         logger.info(map);
 
+                        logger.info(queue);
 
                 }
 
-                if (sentence.contains("update")) {
+                if (((LinkedList<Object>) queue).getFirst().toString().contains("update")) {
                     String[] url = sentence.split("/");
 
                     int chave = Integer.parseInt(url[1]);
@@ -94,7 +93,7 @@ public class Server {
 
 
 
-                if (sentence.contains("delete")) {
+                if (((LinkedList<Object>) queue).getFirst().toString().contains("delete")) {
                     String[] url = sentence.split("/");
 
                     int chave = Integer.parseInt(url[1]);
@@ -102,6 +101,14 @@ public class Server {
                     map.remove(key1);
                 }
 
+                if (sentence.contains("limpar")) {
+                    logger.info("mapa reinicializado");
+                    map.clear();
+                    queue.clear();
+                    logger.info(map);
+                    logger.info(queue);
+
+                }
 
 
             //logger.info("Mapa" + map);

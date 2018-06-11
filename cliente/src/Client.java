@@ -39,7 +39,7 @@ public class Client {
 
             while (true) {
                 System.out.println("Client1 Running");
-                System.out.println("Digite uma opção para iniciar o CRUD\n");
+                System.out.println("Digite uma opção de 1 a 4 para o CRUD ou 5 para reinicializar o disco \n");
                 System.out.println("1 - create\n");
                 System.out.println("2 - read\n");
                 System.out.println("3 - update\n");
@@ -61,6 +61,10 @@ public class Client {
 
                 if(option == 4){
                     System.out.println("\nDigite uma chave a remover no seguinte formato delete/x/ onde x é a chave:\"");
+                }
+
+                if(option == 5){
+                    System.out.println("\nDigite limpar para reinicilizar o disco\"");
                 }
 
 
