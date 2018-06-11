@@ -1,23 +1,12 @@
 
-/*
+
 public class Thread1 extends Client implements Runnable {
 
 
-
     @Override
-    synchronized public void run() {
-
-        try {
+    public void run() {
 
 
-            //super.client();
-            super.receberDados();
-
-        } catch (Exception e){
-            System.out.println("Erro" + e.getMessage());
-        }
     }
-
 }
 
-*/
