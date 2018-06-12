@@ -1,6 +1,6 @@
 
 
-public class Thread3 extends Server implements Runnable {
+public class Thread3 implements Runnable {
 
     @Override
     public void run(){
