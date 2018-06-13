@@ -11,7 +11,28 @@ import java.util.Scanner;
 
 public class Thread1 implements Runnable {
 
+
+
+
     String sentence;
+
+    DatagramSocket clientSocket;
+
+    String modifiedSentence;
+
+    DatagramPacket sendPacket;
+
+    DatagramPacket receivePacket;
+
+    public String getModifiedSentence(){
+        return modifiedSentence;
+    }
+
+    public DatagramSocket getClientSocket(){
+        return clientSocket;
+    }
+
+
 
     public String getSentence(){
         return sentence;
@@ -46,9 +67,15 @@ public class Thread1 implements Runnable {
 
 
     @Override
-    public void run() {
+    synchronized public void run() {
+
+        final Logger logger = Logger.getLogger("client");
+
+        logger.info("passou pelo metodo run da thread 1");
 
         try {
+
+
 
             Properties prop = getProp();
 
@@ -90,12 +117,25 @@ public class Thread1 implements Runnable {
                 BufferedReader inFromUser2 = new BufferedReader(new InputStreamReader(System.in));
                 sentence = inFromUser2.readLine();
 
-                DatagramSocket clientSocket = new DatagramSocket();
+                clientSocket = new DatagramSocket();
                 InetAddress IPAddress = InetAddress.getByName(host);
                 byte[] sendData = new byte[20];
                 sendData = sentence.getBytes();
-                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
+                sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
                 clientSocket.send(sendPacket);
+
+                byte[] receiveData = new byte[20];
+                receivePacket = new DatagramPacket(receiveData, receiveData.length);
+                clientSocket.receive(receivePacket);
+                modifiedSentence = new String(receivePacket.getData());
+
+
+
+                Thread2 thread2 = new Thread2(modifiedSentence);
+                Thread t2 = new Thread(thread2);
+                t2.start();
+
+
 
             }
 

@@ -25,7 +25,6 @@ public class Thread1 implements Runnable {
         this.queue = queue;
     }
 
-
     public static Properties getProp() throws IOException {
         Properties props = new Properties();
         FileInputStream file = new FileInputStream("./servidor/properties/dados.properties");
@@ -37,7 +36,7 @@ public class Thread1 implements Runnable {
 
 
     @Override
-    public void run(){
+    synchronized public void run(){
         try {
 
             final Logger logger = Logger.getLogger("server");
@@ -76,7 +75,13 @@ public class Thread1 implements Runnable {
                 }
 
                 logger.info(queue);
-                //logger.info(map);
+
+
+
+                Thread2 thread2 = new Thread2(queue);
+                Thread t2 = new Thread(thread2);
+                t2.start();
+
 
 
 

@@ -1,29 +1,24 @@
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
+import org.apache.log4j.Logger;
 
-public class Thread2 implements Runnable {
 
-    Thread1 thread1 = new Thread1();
-    String sentence = thread1.getSentence();
-    String host = thread1.getHost();
-    String porta = thread1.getPort();
+public class Thread2 extends Thread1 implements Runnable {
+
+    public Thread2(String modifiedSentence){
+        this.modifiedSentence = modifiedSentence;
+
+    }
 
 
     @Override
     public void run() {
 
-        try {
-            DatagramSocket clientSocket = new DatagramSocket();
-            byte[] receiveData = new byte[20];
-            DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
-            clientSocket.receive(receivePacket);
-            String modifiedSentence = new String(receivePacket.getData());
-            System.out.println("Resposta do Servidor:" + modifiedSentence + " recebido com sucesso\n");
+        final Logger logger = Logger.getLogger("client");
+        logger.info("passou pelo run da Thread 2");
 
-        } catch (Exception e) {
-            System.out.println("Erro" + e.getMessage());
-        }
+        System.out.println("Resposta do Servidor:" + modifiedSentence + " recebido com sucesso\n");
+
+
+
     }
 
 }
