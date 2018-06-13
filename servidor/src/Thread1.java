@@ -17,6 +17,9 @@ public class Thread1 implements Runnable {
 
     Queue<Object> queue = new LinkedList<Object>();
 
+    Queue<Object> queuef2 = new LinkedList<Object>();
+
+
     Map<BigInteger, String> map = new HashMap<>();
 
     public static Properties getProp() throws IOException {
@@ -75,7 +78,7 @@ public class Thread1 implements Runnable {
 
 
 
-                Thread2 thread2 = new Thread2(mensagem,map);
+                Thread2 thread2 = new Thread2(mensagem,map,queuef2);
                 Thread t2 = new Thread(thread2);
                 t2.start();
 

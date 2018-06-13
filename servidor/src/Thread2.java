@@ -9,7 +9,7 @@ public class Thread2 extends Thread1 implements Runnable {
 
     final Logger logger = Logger.getLogger("server");
 
-    Queue<Object> queuef2 = new LinkedList<Object>();
+    Queue<Object> queuef2;
 
     Queue<Object> queuef3 = new LinkedList<Object>();
 
@@ -17,9 +17,10 @@ public class Thread2 extends Thread1 implements Runnable {
 
     Map<BigInteger,String> map;
 
-    public Thread2(String mensagem, Map<BigInteger,String> map){
+    public Thread2(String mensagem, Map<BigInteger,String> map, Queue<Object> queuef2){
         this.mensagem = mensagem;
         this.map = map;
+        this.queuef2 = queuef2;
     }
 
 
@@ -76,11 +77,13 @@ public class Thread2 extends Thread1 implements Runnable {
 
         if (mensagem.contains("limpar")) {
             logger.info("Mapa recuperado" + map);
-            logger.info("Fila recuperada" + queue);
-
+            logger.info("Fila f1 recuperada" + queue);
+            logger.info("Fila f2 recuperada" + queuef2);
+            logger.info("Fila f3 recuperada" + queuef3);
             logger.info("mapa reinicializado");
             map.clear();
             queuef2.clear();
+            queuef3.clear();
             logger.info(map);
             logger.info("F2" + queuef2);
 
