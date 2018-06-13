@@ -34,7 +34,7 @@ public class Thread1 implements Runnable {
         try {
 
             final Logger logger = Logger.getLogger("server");
-
+            logger.info("Thread1");
 
             String port;
 
@@ -69,14 +69,13 @@ public class Thread1 implements Runnable {
                     queue.add(sentence);
                 }
 
-                logger.info(queue);
+                logger.info("F1" + queue);
 
                 String mensagem = ((LinkedList<Object>) queue).getFirst().toString();
 
 
 
-
-                Thread2 thread2 = new Thread2(mensagem);
+                Thread2 thread2 = new Thread2(mensagem,map);
                 Thread t2 = new Thread(thread2);
                 t2.start();
 
