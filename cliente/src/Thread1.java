@@ -98,7 +98,7 @@ public class Thread1 implements Runnable {
                 }
 
                 if(option == 2){
-                    System.out.println("\nPara visualizar o mapa digite read");
+                    System.out.println("\nPara visualizar uma chave do mapa digite read/x/ onde x é a chave");
                 }
 
                 if(option == 3){

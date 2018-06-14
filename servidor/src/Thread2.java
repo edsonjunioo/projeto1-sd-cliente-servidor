@@ -65,10 +65,10 @@ public class Thread2 extends Thread1 implements Runnable {
 
 
         if (mensagem.contains("read")) {
-
-            logger.info(map);
-
-            logger.info("F2" + queuef2);
+            String[] url = mensagem.split("/");
+            int chave = Integer.parseInt(url[1]);
+            BigInteger key1 = BigInteger.valueOf(chave);
+            logger.info("F2:" + key1 +"="+ map.get(key1));
 
         }
 
