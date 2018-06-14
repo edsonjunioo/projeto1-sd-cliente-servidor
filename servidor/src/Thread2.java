@@ -1,6 +1,9 @@
 import org.apache.log4j.Logger;
 
 import java.math.BigInteger;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
@@ -15,12 +18,21 @@ public class Thread2 extends Thread1 implements Runnable {
 
     String mensagem;
 
+    DatagramSocket serverSocket;
+
     Map<BigInteger,String> map;
 
-    public Thread2(String mensagem, Map<BigInteger,String> map, Queue<Object> queuef2){
+    InetAddress IPAddress;
+
+    int port_defined;
+
+    public Thread2(String mensagem, Map<BigInteger,String> map, Queue<Object> queuef2, DatagramSocket serverSocket,InetAddress IPAddress,int port_defined){
         this.mensagem = mensagem;
         this.map = map;
         this.queuef2 = queuef2;
+        this.serverSocket = serverSocket;
+        this.IPAddress = IPAddress;
+        this.port_defined = port_defined;
     }
 
 
@@ -43,7 +55,10 @@ public class Thread2 extends Thread1 implements Runnable {
 
             int chave = Integer.parseInt(url[1]);
             BigInteger key1 = BigInteger.valueOf(chave);
-            map.put(key1, url[2]);
+
+            if(chave < 5200) {
+                map.put(key1, url[2]);
+            }
             logger.info("Mapa:" + map);
             logger.info("F2" + queuef2);
         }
@@ -89,6 +104,15 @@ public class Thread2 extends Thread1 implements Runnable {
 
         }
 
+        try {
+            String mapa = map.toString();
+            byte[] sendData = new byte[map.size()];
+            sendData = mapa.getBytes();
+            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
+            serverSocket.send(sendPacket);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
     }
 

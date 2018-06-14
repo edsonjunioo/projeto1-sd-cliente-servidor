@@ -22,6 +22,12 @@ public class Thread1 implements Runnable {
 
     Map<BigInteger, String> map = new HashMap<>();
 
+    DatagramSocket serverSocket;
+
+    InetAddress IPAddress;
+
+    int port_defined;
+
     public static Properties getProp() throws IOException {
         Properties props = new Properties();
         FileInputStream file = new FileInputStream("./servidor/properties/dados.properties");
@@ -46,27 +52,24 @@ public class Thread1 implements Runnable {
             port = prop.getProperty("prop.server.port");
             int porta = Integer.parseInt(port);
 
-            DatagramSocket serverSocket = new DatagramSocket(porta);
+            serverSocket = new DatagramSocket(porta);
             logger.info("Conexão do servidor iniciada");
 
 
             while (true) {
 
 
-                byte[] receiveData = new byte[20];
-                byte[] sendData = new byte[20];
+                byte[] receiveData = new byte[1400];
+
                 System.out.println("\nServer Running");
                 DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
                 serverSocket.receive(receivePacket);
                 String sentence = new String(receivePacket.getData());
                 //System.out.println("Recebido: " + sentence);
                 logger.info("Recebido: " + sentence);
-                InetAddress IPAddress = receivePacket.getAddress();
-                int port_defined = receivePacket.getPort();
+                IPAddress = receivePacket.getAddress();
+                port_defined = receivePacket.getPort();
                 String capitalizedSentence = sentence.toUpperCase();
-                //sendData = capitalizedSentence.getBytes();
-                //DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
-                //serverSocket.send(sendPacket);
 
                 if(sentence.contains("create") || sentence.contains("read") || sentence.contains("update") || sentence.contains("delete") || sentence.contains("limpar")) {
                     queue.add(sentence);
@@ -78,25 +81,11 @@ public class Thread1 implements Runnable {
 
 
 
-                Thread2 thread2 = new Thread2(mensagem,map,queuef2);
+                Thread2 thread2 = new Thread2(mensagem,map,queuef2,serverSocket,IPAddress,port_defined);
                 Thread t2 = new Thread(thread2);
                 t2.start();
 
                 ((LinkedList<Object>) queue).removeFirst();
-
-
-
-
-
-
-                //logger.info("Mapa" + map);
-                //sendData = capitalizedSentence.getBytes();
-                //DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
-                //serverSocket.send(sendPacket);
-
-                sendData = capitalizedSentence.getBytes();
-                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
-                serverSocket.send(sendPacket);
 
             }
 

@@ -119,16 +119,17 @@ public class Thread1 implements Runnable {
 
                 clientSocket = new DatagramSocket();
                 InetAddress IPAddress = InetAddress.getByName(host);
-                byte[] sendData = new byte[20];
+                byte[] sendData = new byte[1400];
                 sendData = sentence.getBytes();
                 sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
                 clientSocket.send(sendPacket);
 
-                byte[] receiveData = new byte[20];
+                byte[] receiveData = new byte[1400];
                 receivePacket = new DatagramPacket(receiveData, receiveData.length);
                 clientSocket.receive(receivePacket);
                 modifiedSentence = new String(receivePacket.getData());
 
+                //
 
 
                 Thread2 thread2 = new Thread2(modifiedSentence);
