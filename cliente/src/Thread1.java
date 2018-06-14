@@ -119,7 +119,7 @@ public class Thread1 implements Runnable {
 
                 clientSocket = new DatagramSocket();
                 InetAddress IPAddress = InetAddress.getByName(host);
-                byte[] sendData = new byte[1400];
+                byte[] sendData;
                 sendData = sentence.getBytes();
                 sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
                 clientSocket.send(sendPacket);
@@ -127,7 +127,7 @@ public class Thread1 implements Runnable {
                 byte[] receiveData = new byte[1400];
                 receivePacket = new DatagramPacket(receiveData, receiveData.length);
                 clientSocket.receive(receivePacket);
-                modifiedSentence = new String(receivePacket.getData());
+                modifiedSentence = new String(receivePacket.getData(),0, receivePacket.getLength());
 
                 //
 
