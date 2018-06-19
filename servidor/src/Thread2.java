@@ -1,20 +1,21 @@
 import org.apache.log4j.Logger;
 
+import java.io.*;
 import java.math.BigInteger;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.util.LinkedList;
 import java.util.Map;
-import java.util.Queue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class Thread2 extends Thread1 implements Runnable {
 
     final Logger logger = Logger.getLogger("server");
 
-    Queue<Object> queuef2;
+    BlockingQueue<Object> queuef2;
 
-    Queue<Object> queuef3 = new LinkedList<Object>();
+    BlockingQueue<Object> queuef3 = new LinkedBlockingQueue<>();
 
     String mensagem;
 
@@ -26,7 +27,7 @@ public class Thread2 extends Thread1 implements Runnable {
 
     int port_defined;
 
-    public Thread2(String mensagem, Map<BigInteger,String> map, Queue<Object> queuef2, DatagramSocket serverSocket,InetAddress IPAddress,int port_defined){
+    public Thread2(String mensagem, Map<BigInteger,String> map, BlockingQueue<Object> queuef2, DatagramSocket serverSocket,InetAddress IPAddress,int port_defined){
         this.mensagem = mensagem;
         this.map = map;
         this.queuef2 = queuef2;
@@ -35,7 +36,15 @@ public class Thread2 extends Thread1 implements Runnable {
         this.port_defined = port_defined;
     }
 
+    // ./servidor/disco/disco.txt
 
+    public static ObjectOutputStream getFile() throws Exception{
+        FileOutputStream file = new FileOutputStream("./servidor/disco/disco.txt");
+
+        ObjectOutputStream disco = new ObjectOutputStream(file);
+
+        return disco;
+    }
 
     @Override
     synchronized public void run() {
@@ -44,6 +53,17 @@ public class Thread2 extends Thread1 implements Runnable {
         queuef2.add(mensagem);
         queuef3.add(mensagem);
 
+
+        try {
+            ObjectOutputStream disco = getFile();
+
+
+            disco.writeObject(queuef2.toString());
+        } catch (Exception e){
+            System.out.println("erro arquivo" + e.getMessage());
+        }
+
+
         final Logger logger = Logger.getLogger("server");
         logger.info("Thread 2");
         logger.info("Log em disco" + queuef2);
@@ -51,43 +71,86 @@ public class Thread2 extends Thread1 implements Runnable {
 
         logger.info("processamento");
         if (mensagem.contains("create")) {
-            String[] url = mensagem.split("/");
 
-            int chave = Integer.parseInt(url[1]);
-            BigInteger key1 = BigInteger.valueOf(chave);
+            String[] compare = mensagem.split("/");
+            int chaveCompare = Integer.parseInt(compare[1]);
+            BigInteger keyCompare = BigInteger.valueOf(chaveCompare);
+            map.get(keyCompare);
 
-            if(chave < 5200) {
-                map.put(key1, url[2]);
+            if (map.get(keyCompare) == null) {
+
+                String[] url = mensagem.split("/");
+
+                int chave = Integer.parseInt(url[1]);
+                BigInteger key1 = BigInteger.valueOf(chave);
+
+                if (chave < 5200) {
+                    map.put(key1, url[2]);
+                }
+                logger.info("Mapa:" + map);
+                logger.info("F2" + queuef2);
+            } else {
+                System.out.println("chave já utilizada");
             }
-            logger.info("Mapa:" + map);
-            logger.info("F2" + queuef2);
+
         }
 
-
         if (mensagem.contains("read")) {
-            String[] url = mensagem.split("/");
-            int chave = Integer.parseInt(url[1]);
-            BigInteger key1 = BigInteger.valueOf(chave);
-            logger.info("F2:" + key1 +"="+ map.get(key1));
+            String[] compare = mensagem.split("/");
+            int chaveCompare = Integer.parseInt(compare[1]);
+            BigInteger keyCompare = BigInteger.valueOf(chaveCompare);
+            map.get(keyCompare);
+
+            if (map.get(keyCompare) != null) {
+                String[] url = mensagem.split("/");
+                int chave = Integer.parseInt(url[1]);
+                BigInteger key1 = BigInteger.valueOf(chave);
+                logger.info("F2:" + key1 + "=" + map.get(key1));
+            } else {
+                System.out.println("Chave não está no mapa");
+            }
+
+
 
         }
 
         if (mensagem.contains("update")) {
-            String[] url = mensagem.split("/");
+            String[] compare = mensagem.split("/");
+            int chaveCompare = Integer.parseInt(compare[1]);
+            BigInteger keyCompare = BigInteger.valueOf(chaveCompare);
+            map.get(keyCompare);
 
-            int chave = Integer.parseInt(url[1]);
-            BigInteger key1 = BigInteger.valueOf(chave);
-            map.remove(key1);
-            map.put(key1, url[2]);
+            if (map.get(keyCompare) != null) {
+
+                String[] url = mensagem.split("/");
+
+                int chave = Integer.parseInt(url[1]);
+                BigInteger key1 = BigInteger.valueOf(chave);
+                map.remove(key1);
+                map.put(key1, url[2]);
+            } else {
+                System.out.println("chave não está no mapa");
+            }
+
         }
 
 
         if (mensagem.contains("delete")) {
-            String[] url = mensagem.split("/");
+            String[] compare = mensagem.split("/");
+            int chaveCompare = Integer.parseInt(compare[1]);
+            BigInteger keyCompare = BigInteger.valueOf(chaveCompare);
+            map.get(keyCompare);
 
-            int chave = Integer.parseInt(url[1]);
-            BigInteger key1 = BigInteger.valueOf(chave);
-            map.remove(key1);
+            if (map.get(keyCompare) != null) {
+                String[] url = mensagem.split("/");
+
+                int chave = Integer.parseInt(url[1]);
+                BigInteger key1 = BigInteger.valueOf(chave);
+                map.remove(key1);
+            } else {
+                System.out.println("Chave não está no mapa");
+            }
+
         }
 
         if (mensagem.contains("limpar")) {

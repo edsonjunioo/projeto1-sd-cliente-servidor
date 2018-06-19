@@ -2,11 +2,14 @@ import org.apache.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.math.BigInteger;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.util.*;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 
 public class Thread1 implements Runnable {
@@ -14,10 +17,12 @@ public class Thread1 implements Runnable {
     //Thread2 thread2 = new Thread2();
     //Map<BigInteger,String> map = thread2.getMap();
 
+    String[] backupComandos;
 
-    Queue<Object> queue = new LinkedList<Object>();
 
-    Queue<Object> queuef2 = new LinkedList<Object>();
+    BlockingQueue<Object> queue = new LinkedBlockingQueue<>();
+
+    BlockingQueue<Object> queuef2 = new LinkedBlockingQueue<>();
 
 
     Map<BigInteger, String> map = new HashMap<>();
@@ -55,6 +60,107 @@ public class Thread1 implements Runnable {
             serverSocket = new DatagramSocket(porta);
             logger.info("Conexão do servidor iniciada");
 
+            try {
+
+
+                FileInputStream fileInputStream = new FileInputStream("./servidor/disco/disco.txt");
+
+                ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+
+                String texto = objectInputStream.readObject().toString();
+
+                //queuef2.clear();
+
+                logger.info("comandos recuperados: " + texto);
+
+                texto.replace("[","");
+                texto.replace("]","");
+                backupComandos = texto.split(",");
+
+                for (String valor : backupComandos){
+
+                    queuef2.add(valor);
+
+                    if (valor.contains("create")) {
+
+                        String[] compare = valor.split("/");
+                        int chaveCompare = Integer.parseInt(compare[1]);
+                        BigInteger keyCompare = BigInteger.valueOf(chaveCompare);
+                        map.get(keyCompare);
+
+                        if (map.get(keyCompare) == null) {
+
+                            String[] urlRecuperada = valor.split("/");
+
+                            int chave = Integer.parseInt(urlRecuperada[1]);
+                            BigInteger key1 = BigInteger.valueOf(chave);
+
+                            if (chave < 5200) {
+                                map.put(key1, urlRecuperada[2]);
+                            }
+                            logger.info("Mapa:" + map);
+                            logger.info("F2" + queuef2);
+                        }
+
+                    }
+
+                    if (valor.contains("read")) {
+                        String[] compare = valor.split("/");
+                        int chaveCompare = Integer.parseInt(compare[1]);
+                        BigInteger keyCompare = BigInteger.valueOf(chaveCompare);
+                        map.get(keyCompare);
+
+                        if (map.get(keyCompare) != null) {
+                            String[] url = valor.split("/");
+                            int chave = Integer.parseInt(url[1]);
+                            BigInteger key1 = BigInteger.valueOf(chave);
+                            logger.info("F2:" + key1 + "=" + map.get(key1));
+                        }
+
+
+                    }
+
+                    if (valor.contains("update")) {
+                        String[] compare = valor.split("/");
+                        int chaveCompare = Integer.parseInt(compare[1]);
+                        BigInteger keyCompare = BigInteger.valueOf(chaveCompare);
+                        map.get(keyCompare);
+
+                        if (map.get(keyCompare) != null) {
+
+                            String[] urlRecuperada = valor.split("/");
+                            int chave = Integer.parseInt(urlRecuperada[1]);
+                            BigInteger key1 = BigInteger.valueOf(chave);
+                            map.remove(key1);
+                            map.put(key1, urlRecuperada[2]);
+                        }
+
+                    }
+
+
+                    if (valor.contains("delete")) {
+                        String[] compare = valor.split("/");
+                        int chaveCompare = Integer.parseInt(compare[1]);
+                        BigInteger keyCompare = BigInteger.valueOf(chaveCompare);
+                        map.get(keyCompare);
+
+                        if (map.get(keyCompare) != null) {
+                            String[] url = valor.split("/");
+
+                            int chave = Integer.parseInt(url[1]);
+                            BigInteger key1 = BigInteger.valueOf(chave);
+                            map.remove(key1);
+                        }
+
+                    }
+
+
+                }
+
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+
 
             while (true) {
 
@@ -77,7 +183,7 @@ public class Thread1 implements Runnable {
 
                 logger.info("F1" + queue);
 
-                String mensagem = ((LinkedList<Object>) queue).getFirst().toString();
+                String mensagem = queue.peek().toString();
 
 
 
@@ -85,7 +191,7 @@ public class Thread1 implements Runnable {
                 Thread t2 = new Thread(thread2);
                 t2.start();
 
-                ((LinkedList<Object>) queue).removeFirst();
+                queue.remove();
 
             }
 
