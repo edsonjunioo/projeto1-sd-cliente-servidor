@@ -73,9 +73,7 @@ public class Thread1 implements Runnable {
 
                 logger.info("comandos recuperados: " + texto);
 
-                texto.replace("[","");
-                texto.replace("]","");
-                backupComandos = texto.split(",");
+                backupComandos = texto.replace("[","").replace("]","").split(",");
 
                 for (String valor : backupComandos){
 
@@ -98,8 +96,6 @@ public class Thread1 implements Runnable {
                             if (chave < 5200) {
                                 map.put(key1, urlRecuperada[2]);
                             }
-                            logger.info("Mapa:" + map);
-                            logger.info("F2" + queuef2);
                         }
 
                     }
@@ -114,7 +110,6 @@ public class Thread1 implements Runnable {
                             String[] url = valor.split("/");
                             int chave = Integer.parseInt(url[1]);
                             BigInteger key1 = BigInteger.valueOf(chave);
-                            logger.info("F2:" + key1 + "=" + map.get(key1));
                         }
 
 
@@ -161,6 +156,7 @@ public class Thread1 implements Runnable {
                 System.out.println(e.getMessage());
             }
 
+            logger.info("Mapa recuperado" + map);
 
             while (true) {
 
