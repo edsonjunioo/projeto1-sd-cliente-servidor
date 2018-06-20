@@ -67,20 +67,17 @@ public class Thread2 extends Thread1 implements Runnable {
             BigInteger keyCompare = BigInteger.valueOf(chaveCompare);
             map.get(keyCompare);
 
-            if (map.get(keyCompare) == null) {
+            if (map.get(keyCompare) == null && compare[2].length() < 1400 && chaveCompare < 5200) {
 
                 String[] url = mensagem.split("/");
 
                 int chave = Integer.parseInt(url[1]);
                 BigInteger key1 = BigInteger.valueOf(chave);
-
-                if (chave < 5200) {
-                    map.put(key1, url[2]);
-                }
+                map.put(key1, url[2]);
                 logger.info("Mapa:" + map);
                 logger.info("F2" + queuef2);
             } else {
-                System.out.println("chave já utilizada");
+                System.out.println("chave já utilizada ou tamanho da chave/valor incompativeis");
             }
 
         }
@@ -110,7 +107,7 @@ public class Thread2 extends Thread1 implements Runnable {
             BigInteger keyCompare = BigInteger.valueOf(chaveCompare);
             map.get(keyCompare);
 
-            if (map.get(keyCompare) != null) {
+            if (map.get(keyCompare) != null && compare[2].length() < 1400) {
 
                 String[] url = mensagem.split("/");
 
@@ -119,7 +116,7 @@ public class Thread2 extends Thread1 implements Runnable {
                 map.remove(key1);
                 map.put(key1, url[2]);
             } else {
-                System.out.println("chave não está no mapa");
+                System.out.println("chave não está no mapa ou tamanho do valor maior que 1400 bytes");
             }
 
         }
