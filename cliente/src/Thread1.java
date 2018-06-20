@@ -85,7 +85,7 @@ public class Thread1 implements Runnable {
 
             while (true) {
                 System.out.println("Client1 Running");
-                System.out.println("Digite uma opção de 1 a 4 para o CRUD ou 5 para reinicializar o disco \n");
+                System.out.println("Digite uma opção de 1 a 4 para o CRUD\n");
                 System.out.println("1 - create\n");
                 System.out.println("2 - read\n");
                 System.out.println("3 - update\n");
