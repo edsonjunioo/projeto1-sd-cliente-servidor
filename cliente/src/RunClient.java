@@ -15,6 +15,19 @@ public class RunClient {
         Thread t1 = new Thread(thread1);
         t1.start();
 
+        try {
+
+            t1.join();
+        } catch (Exception e){
+
+        }
+
+
+        String modifiedSentence = thread1.getModifiedSentence();
+
+
+
+
 
 
 

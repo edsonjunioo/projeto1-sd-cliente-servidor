@@ -124,18 +124,13 @@ public class Thread1 implements Runnable {
                 sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
                 clientSocket.send(sendPacket);
 
-                byte[] receiveData = new byte[1400];
-                receivePacket = new DatagramPacket(receiveData, receiveData.length);
-                clientSocket.receive(receivePacket);
-                modifiedSentence = new String(receivePacket.getData(),0, receivePacket.getLength());
-
-                //
 
 
-                Thread2 thread2 = new Thread2(modifiedSentence);
+
+
+                Thread2 thread2 = new Thread2(clientSocket);
                 Thread t2 = new Thread(thread2);
                 t2.start();
-
 
 
             }
