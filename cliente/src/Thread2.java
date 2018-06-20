@@ -15,7 +15,7 @@ public class Thread2 extends Thread1 implements Runnable {
         final Logger logger = Logger.getLogger("client");
         logger.info("passou pelo run da Thread 2");
 
-        System.out.println("Mapa:" + modifiedSentence + " recebido com sucesso\n");
+        System.out.println("Mapa atualizado:" + modifiedSentence + " mensagem recebida com sucesso\n");
 
 
 
