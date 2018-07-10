@@ -16,48 +16,14 @@ public class Thread1 implements Runnable {
 
     String sentence;
 
-    DatagramSocket clientSocket;
-
 
 
     DatagramPacket sendPacket;
 
 
 
-
-
-    public String getSentence(){
-        return sentence;
-    }
-
-    public void setSentence(String sentence){
-        this.sentence = sentence;
-    }
-
-    public static Properties getProp() throws Exception{
-        Properties props = new Properties();
-        FileInputStream file = new FileInputStream("./cliente/properties/dados.properties");
-        props.load(file);
-        return props;
-
-    }
-
-    String host;
-
-    String port;
-
-    public String getHost(){
-        return host;
-    }
-
-    public String getPort(){
-        return port;
-    }
-
-
-
     public Thread1(DatagramSocket clientSocket){
-        this.clientSocket = clientSocket;
+        RunClient.clientSocket = clientSocket;
 
     }
 
@@ -71,12 +37,8 @@ public class Thread1 implements Runnable {
 
         try {
 
-
-
-            Properties prop = getProp();
-
-            host = prop.getProperty("prop.client.host");
-            port = prop.getProperty("prop.client.port");
+            String host = RunClient.getProp().getProperty("prop.client.host");
+            String port = RunClient.getProp().getProperty("prop.client.port");
             int porta = Integer.parseInt(port);
 
             while (true) {
@@ -117,7 +79,7 @@ public class Thread1 implements Runnable {
                 byte[] sendData;
                 sendData = sentence.getBytes();
                 sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
-                clientSocket.send(sendPacket);
+                RunClient.clientSocket.send(sendPacket);
 
 
 

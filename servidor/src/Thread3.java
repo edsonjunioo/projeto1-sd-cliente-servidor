@@ -2,12 +2,11 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.util.concurrent.BlockingQueue;
 
-public class Thread3 extends Thread1 implements Runnable {
+public class Thread3 implements Runnable {
 
-    BlockingQueue<Object> queuef3;
 
     public Thread3(BlockingQueue<Object> queuef3){
-        this.queuef3 = queuef3;
+        RunServer.queuef3 = queuef3;
 
     }
 
@@ -28,7 +27,7 @@ public class Thread3 extends Thread1 implements Runnable {
             ObjectOutputStream disco = getFile();
 
 
-            disco.writeObject(queuef3.toString());
+            disco.writeObject(RunServer.queuef3.toString());
         } catch (Exception e){
             System.out.println("erro arquivo" + e.getMessage());
         }

@@ -6,14 +6,13 @@ import java.net.DatagramSocket;
 
 public class Thread2 implements Runnable {
 
-    DatagramSocket clientSocket;
 
     DatagramPacket receivePacket;
 
     String modifiedSentence;
 
     public Thread2(DatagramSocket clientSocket){
-        this.clientSocket = clientSocket;
+        RunClient.clientSocket = clientSocket;
 
     }
 
@@ -30,7 +29,7 @@ public class Thread2 implements Runnable {
 
             byte[] receiveData = new byte[1400];
             receivePacket = new DatagramPacket(receiveData, receiveData.length);
-            clientSocket.receive(receivePacket);
+            RunClient.clientSocket.receive(receivePacket);
             modifiedSentence = new String(receivePacket.getData(), 0, receivePacket.getLength());
 
             System.out.println("Mapa atualizado:" + modifiedSentence + " e mensagem recebida com sucesso\n");

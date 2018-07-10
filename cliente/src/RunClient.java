@@ -1,11 +1,21 @@
 import org.apache.log4j.Logger;
 
+import java.io.FileInputStream;
 import java.net.DatagramSocket;
+import java.util.Properties;
 
 public class RunClient {
 
 
     static DatagramSocket clientSocket;
+
+    public static Properties getProp() throws Exception{
+        Properties props = new Properties();
+        FileInputStream file = new FileInputStream("./cliente/properties/dados.properties");
+        props.load(file);
+        return props;
+
+    }
 
 
     public static void main(String[] args){
