@@ -18,19 +18,11 @@ public class Thread1 implements Runnable {
 
     DatagramSocket clientSocket;
 
-    String modifiedSentence;
+
 
     DatagramPacket sendPacket;
 
-    DatagramPacket receivePacket;
 
-    public String getModifiedSentence(){
-        return modifiedSentence;
-    }
-
-    public DatagramSocket getClientSocket(){
-        return clientSocket;
-    }
 
 
 
@@ -64,6 +56,10 @@ public class Thread1 implements Runnable {
 
 
 
+    public Thread1(DatagramSocket clientSocket){
+        this.clientSocket = clientSocket;
+
+    }
 
 
     @Override
@@ -117,7 +113,6 @@ public class Thread1 implements Runnable {
                 BufferedReader inFromUser2 = new BufferedReader(new InputStreamReader(System.in));
                 sentence = inFromUser2.readLine();
 
-                clientSocket = new DatagramSocket();
                 InetAddress IPAddress = InetAddress.getByName(host);
                 byte[] sendData;
                 sendData = sentence.getBytes();
@@ -128,9 +123,6 @@ public class Thread1 implements Runnable {
 
 
 
-                Thread2 thread2 = new Thread2(clientSocket);
-                Thread t2 = new Thread(thread2);
-                t2.start();
 
 
             }

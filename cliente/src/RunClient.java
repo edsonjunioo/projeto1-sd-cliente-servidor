@@ -1,7 +1,11 @@
 import org.apache.log4j.Logger;
 
+import java.net.DatagramSocket;
+
 public class RunClient {
 
+
+    static DatagramSocket clientSocket;
 
 
     public static void main(String[] args){
@@ -10,25 +14,24 @@ public class RunClient {
 
         logger.info("passou pelo main client");
 
-        //Client
-        Thread1 thread1 = new Thread1();
-        Thread t1 = new Thread(thread1);
-        t1.start();
-
         try {
 
-            t1.join();
-        } catch (Exception e){
+            clientSocket = new DatagramSocket();
 
+        }catch (Exception e){
+            System.out.println(e.getMessage());
         }
 
 
-        String modifiedSentence = thread1.getModifiedSentence();
 
 
+        Thread1 thread1 = new Thread1(clientSocket);
+        Thread t1 = new Thread(thread1);
+        t1.start();
 
-
-
+        Thread2 thread2 = new Thread2(clientSocket);
+        Thread t2 = new Thread(thread2);
+        t2.start();
 
 
 
