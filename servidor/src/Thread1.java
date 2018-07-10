@@ -24,6 +24,8 @@ public class Thread1 implements Runnable {
 
     BlockingQueue<Object> queuef2 = new LinkedBlockingQueue<>();
 
+    BlockingQueue<Object> queuef3 = new LinkedBlockingQueue<>();
+
 
     Map<BigInteger, String> map = new HashMap<>();
 
@@ -69,14 +71,13 @@ public class Thread1 implements Runnable {
 
                 String texto = objectInputStream.readObject().toString();
 
-                //queuef2.clear();
-
                 logger.info("comandos recuperados: " + texto);
 
                 backupComandos = texto.replace("[","").replace("]","").split(",");
 
                 for (String valor : backupComandos){
 
+                    queuef3.add(valor);
                     queuef2.add(valor);
 
                     if (valor.contains("create")) {
@@ -183,7 +184,7 @@ public class Thread1 implements Runnable {
 
 
 
-                Thread2 thread2 = new Thread2(mensagem,map,queuef2,serverSocket,IPAddress,port_defined);
+                Thread2 thread2 = new Thread2(mensagem,map,queuef2,queuef3,serverSocket,IPAddress,port_defined);
                 Thread t2 = new Thread(thread2);
                 t2.start();
 
