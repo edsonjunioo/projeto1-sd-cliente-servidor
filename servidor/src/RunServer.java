@@ -15,11 +15,11 @@ public class RunServer {
 
     static DatagramSocket serverSocket;
 
-    static BlockingQueue<Object> queue = new LinkedBlockingQueue<>();
+    static BlockingQueue<String> queue = new LinkedBlockingQueue<>();
 
-    static BlockingQueue<Object> queuef2 = new LinkedBlockingQueue<>();
+    static BlockingQueue<String> queuef2 = new LinkedBlockingQueue<>();
 
-    static BlockingQueue<Object> queuef3 = new LinkedBlockingQueue<>();
+    static BlockingQueue<String> queuef3 = new LinkedBlockingQueue<>();
 
     static String mensagem;
 

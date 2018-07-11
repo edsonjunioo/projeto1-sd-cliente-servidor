@@ -42,47 +42,47 @@ public class Thread1 implements Runnable {
             int porta = Integer.parseInt(port);
 
             while (true) {
-                System.out.println("Client1 Running");
-                System.out.println("Digite uma opção de 1 a 4 para o CRUD\n");
-                System.out.println("1 - create\n");
-                System.out.println("2 - read\n");
-                System.out.println("3 - update\n");
-                System.out.println("4 - delete\n");
-                Scanner ler = new Scanner(System.in);
-                int option = ler.nextInt();
+                    System.out.println("Client1 Running");
+                    System.out.println("Digite uma opção de 1 a 4 para o CRUD\n");
+                    System.out.println("1 - create\n");
+                    System.out.println("2 - read\n");
+                    System.out.println("3 - update\n");
+                    System.out.println("4 - delete\n");
+                    Scanner ler = new Scanner(System.in);
+                    int option = ler.nextInt();
 
-                if(option == 1) {
-                    System.out.println("\nDigite algo para enviar com a chave no seguinte formato: create/chave/msg");
-                }
+                    if (option == 1) {
+                        System.out.println("\nDigite algo para enviar com a chave no seguinte formato: create/chave/msg");
+                    }
 
-                if(option == 2){
-                    System.out.println("\nPara visualizar uma chave do mapa digite read/x/ onde x é a chave");
-                }
+                    if (option == 2) {
+                        System.out.println("\nPara visualizar uma chave do mapa digite read/x/ onde x é a chave");
+                    }
 
-                if(option == 3){
-                    System.out.println("\nDigite chave a atualizar no seguinte formato update/x/msg onde x é a chave a ser atualizada:");
-                }
+                    if (option == 3) {
+                        System.out.println("\nDigite chave a atualizar no seguinte formato update/x/msg onde x é a chave a ser atualizada:");
+                    }
 
-                if(option == 4){
-                    System.out.println("\nDigite uma chave a remover no seguinte formato delete/x/ onde x é a chave:\"");
-                }
+                    if (option == 4) {
+                        System.out.println("\nDigite uma chave a remover no seguinte formato delete/x/ onde x é a chave:\"");
+                    }
 
-                if(option == 5){
-                    System.out.println("\nDigite limpar para reinicilizar o disco\"");
-                }
-
-
-                BufferedReader inFromUser2 = new BufferedReader(new InputStreamReader(System.in));
-                sentence = inFromUser2.readLine();
-
-                InetAddress IPAddress = InetAddress.getByName(host);
-                byte[] sendData;
-                sendData = sentence.getBytes();
-                sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
-                RunClient.clientSocket.send(sendPacket);
+                    if (option == 5) {
+                        System.out.println("\nDigite limpar para reinicilizar o disco\"");
+                    }
 
 
+                    BufferedReader inFromUser2 = new BufferedReader(new InputStreamReader(System.in));
+                    sentence = inFromUser2.readLine();
 
+                    InetAddress IPAddress = InetAddress.getByName(host);
+                    byte[] sendData;
+                    sendData = sentence.getBytes();
+                    sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, porta);
+                    RunClient.clientSocket.send(sendPacket);
+
+
+                    Thread.currentThread();
 
 
 

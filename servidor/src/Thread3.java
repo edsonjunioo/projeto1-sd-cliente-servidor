@@ -5,7 +5,7 @@ import java.util.concurrent.BlockingQueue;
 public class Thread3 implements Runnable {
 
 
-    public Thread3(BlockingQueue<Object> queuef3){
+    public Thread3(BlockingQueue<String> queuef3){
         RunServer.queuef3 = queuef3;
 
     }
@@ -23,7 +23,7 @@ public class Thread3 implements Runnable {
     @Override
     synchronized public void run(){
 
-        while (RunServer.queuef3.size() != 0) {
+        while (true) {
             try {
                 ObjectOutputStream disco = getFile();
 

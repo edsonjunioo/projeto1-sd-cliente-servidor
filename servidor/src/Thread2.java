@@ -19,7 +19,7 @@ public class Thread2 implements Runnable {
 
 
 
-    public Thread2(String mensagem, Map<BigInteger,String> map, BlockingQueue<Object> queuef2, BlockingQueue<Object> queuef3, DatagramSocket serverSocket,InetAddress IPAddress,int port_defined){
+    public Thread2(String mensagem, Map<BigInteger,String> map, BlockingQueue<String> queuef2, BlockingQueue<String> queuef3, DatagramSocket serverSocket,InetAddress IPAddress,int port_defined){
 
     }
 
@@ -29,8 +29,13 @@ public class Thread2 implements Runnable {
     @Override
     synchronized public void run() {
 
-        while (RunServer.queuef2.size() != 0) {
+        while (true) {
             try {
+                String mensagem = RunServer.queue.take();
+            } catch (InterruptedException e){
+                continue;
+            }
+
 
 
             RunServer.queue.remove();
@@ -132,6 +137,7 @@ public class Thread2 implements Runnable {
 
             }
 
+            try {
 
                 String mapa = RunServer.map.toString();
                 byte[] sendData = new byte[RunServer.map.size()];

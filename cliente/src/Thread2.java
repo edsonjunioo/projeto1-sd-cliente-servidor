@@ -18,24 +18,35 @@ public class Thread2 implements Runnable {
 
 
     @Override
-    public void run() {
+    synchronized public void run() {
 
         final Logger logger = Logger.getLogger("client");
         logger.info("passou pelo run da Thread 2");
 
+        while (true) {
+            logger.info("passou pelo run da Thread 2");
 
-        try {
+            try {
 
 
-            byte[] receiveData = new byte[1400];
-            receivePacket = new DatagramPacket(receiveData, receiveData.length);
-            RunClient.clientSocket.receive(receivePacket);
-            modifiedSentence = new String(receivePacket.getData(), 0, receivePacket.getLength());
+                byte[] receiveData = new byte[1400];
+                receivePacket = new DatagramPacket(receiveData, receiveData.length);
 
-            System.out.println("Mapa atualizado:" + modifiedSentence + " e mensagem recebida com sucesso\n");
+                try {
+                    RunClient.clientSocket.receive(receivePacket);
+                }catch (Exception e){
+                    System.out.println(e.getMessage());
+                }
+                modifiedSentence = new String(receivePacket.getData(), 0, receivePacket.getLength());
 
-        }catch (Exception e){
-            System.out.println(e.getMessage());
+                System.out.println("Mapa atualizado:" + modifiedSentence + " e mensagem recebida com sucesso\n");
+
+                Thread.sleep(300);
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
