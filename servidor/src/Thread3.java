@@ -21,15 +21,17 @@ public class Thread3 implements Runnable {
 
 
     @Override
-    public void run(){
+    synchronized public void run(){
 
-        try {
-            ObjectOutputStream disco = getFile();
+        while (RunServer.queuef3.size() != 0) {
+            try {
+                ObjectOutputStream disco = getFile();
 
 
-            disco.writeObject(RunServer.queuef3.toString());
-        } catch (Exception e){
-            System.out.println("erro arquivo" + e.getMessage());
+                disco.writeObject(RunServer.queuef3.toString());
+            } catch (Exception e) {
+                System.out.println("erro arquivo" + e.getMessage());
+            }
         }
 
     }

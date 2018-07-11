@@ -2,6 +2,7 @@ import org.apache.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InterruptedIOException;
 import java.io.ObjectInputStream;
 import java.math.BigInteger;
 import java.net.DatagramPacket;
@@ -23,7 +24,7 @@ public class Thread1 implements Runnable {
 
     @Override
     synchronized public void run(){
-        try {
+
 
             final Logger logger = Logger.getLogger("server");
             logger.info("Thread1");
@@ -129,37 +130,38 @@ public class Thread1 implements Runnable {
             logger.info("Mapa recuperado" + RunServer.map);
 
             while (true) {
+                try {
+                    byte[] receiveData = new byte[1400];
 
+                    System.out.println("\nServer Running");
+                    DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+                    RunServer.serverSocket.receive(receivePacket);
+                    String sentence = new String(receivePacket.getData(), 0, receivePacket.getLength());
+                    //System.out.println("Recebido: " + sentence);
+                    logger.info("Recebido: " + sentence);
+                    RunServer.IPAddress = receivePacket.getAddress();
+                    RunServer.port_defined = receivePacket.getPort();
+                    String capitalizedSentence = sentence.toUpperCase();
 
-                byte[] receiveData = new byte[1400];
+                    if (sentence.contains("create") || sentence.contains("read") || sentence.contains("update") || sentence.contains("delete") || sentence.contains("limpar")) {
+                        RunServer.queue.add(sentence);
+                    }
 
-                System.out.println("\nServer Running");
-                DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
-                RunServer.serverSocket.receive(receivePacket);
-                String sentence = new String(receivePacket.getData(),0, receivePacket.getLength());
-                //System.out.println("Recebido: " + sentence);
-                logger.info("Recebido: " + sentence);
-                RunServer.IPAddress = receivePacket.getAddress();
-                RunServer.port_defined = receivePacket.getPort();
-                String capitalizedSentence = sentence.toUpperCase();
+                    logger.info("F1" + RunServer.queue);
+                    logger.info("Mapa" + RunServer.map);
+                    logger.info("F2" + RunServer.queuef2);
+                    logger.info("F3" + RunServer.queuef3);
 
-                if(sentence.contains("create") || sentence.contains("read") || sentence.contains("update") || sentence.contains("delete") || sentence.contains("limpar")) {
-                    RunServer.queue.add(sentence);
+                    String mensagem = RunServer.queue.peek().toString();
+
+                    RunServer.queuef2.add(RunServer.queue.peek().toString());
+                    RunServer.queuef3.add(RunServer.queue.peek().toString());
+
+                }catch (Exception e){
+                    System.out.println(e.getMessage());
                 }
-
-                logger.info("F1" + RunServer.queue);
-
-
-
             }
 
-        } catch(
-                Exception e)
 
-        {
-            //Logger logger = process();
-            //logger.error("Erro" + e.getMessage());
-            System.out.println("Erro" + e.getMessage());
-        }
     }
 }
