@@ -25,6 +25,13 @@ public class Thread3 implements Runnable {
 
         while (true) {
             try {
+                RunServer.mensagem = RunServer.queue.take();
+            } catch (InterruptedException e){
+                continue;
+            }
+
+
+            try {
                 ObjectOutputStream disco = getFile();
 
 

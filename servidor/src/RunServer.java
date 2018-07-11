@@ -23,6 +23,8 @@ public class RunServer {
 
     static String mensagem;
 
+    static String mensagemf2;
+
     static Map<BigInteger, String> map = new HashMap<>();
 
     static InetAddress IPAddress;
@@ -63,7 +65,7 @@ public class RunServer {
         t1.start();
 
 
-        Thread2 thread2 = new Thread2(mensagem,map,queuef2,queuef3,serverSocket,IPAddress,port_defined);
+        Thread2 thread2 = new Thread2(mensagem,mensagemf2,map,queuef2,queuef3,serverSocket,IPAddress,port_defined);
         Thread t2 = new Thread(thread2);
         t2.start();
 

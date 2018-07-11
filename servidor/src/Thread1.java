@@ -145,6 +145,7 @@ public class Thread1 implements Runnable {
 
                     if (sentence.contains("create") || sentence.contains("read") || sentence.contains("update") || sentence.contains("delete") || sentence.contains("limpar")) {
                         RunServer.queue.add(sentence);
+                        RunServer.queuef3.add(sentence);
                     }
 
                     logger.info("F1" + RunServer.queue);
@@ -152,10 +153,11 @@ public class Thread1 implements Runnable {
                     logger.info("F2" + RunServer.queuef2);
                     logger.info("F3" + RunServer.queuef3);
 
-                    String mensagem = RunServer.queue.peek().toString();
+                    //RunServer.mensagem = RunServer.queue.peek();
+                    RunServer.mensagemf2 = RunServer.queue.peek().toString();
 
-                    RunServer.queuef2.add(RunServer.queue.peek().toString());
-                    RunServer.queuef3.add(RunServer.queue.peek().toString());
+                    //RunServer.queuef2.add(RunServer.queue.peek().toString());
+                    //RunServer.queuef3.add(RunServer.queue.peek().toString());
 
                 }catch (Exception e){
                     System.out.println(e.getMessage());

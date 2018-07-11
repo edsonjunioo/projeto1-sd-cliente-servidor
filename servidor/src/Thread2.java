@@ -19,7 +19,7 @@ public class Thread2 implements Runnable {
 
 
 
-    public Thread2(String mensagem, Map<BigInteger,String> map, BlockingQueue<String> queuef2, BlockingQueue<String> queuef3, DatagramSocket serverSocket,InetAddress IPAddress,int port_defined){
+    public Thread2(String mensagem, String mensagemf2, Map<BigInteger,String> map, BlockingQueue<String> queuef2, BlockingQueue<String> queuef3, DatagramSocket serverSocket,InetAddress IPAddress,int port_defined){
 
     }
 
@@ -31,16 +31,12 @@ public class Thread2 implements Runnable {
 
         while (true) {
             try {
-                String mensagem = RunServer.queue.take();
+                RunServer.mensagem = RunServer.queue.take();
             } catch (InterruptedException e){
                 continue;
             }
 
 
-
-            RunServer.queue.remove();
-
-            String mensagemf2 = RunServer.queuef2.peek().toString();
 
 
             final Logger logger = Logger.getLogger("server");
@@ -49,22 +45,24 @@ public class Thread2 implements Runnable {
             logger.info("Mapa" + RunServer.map);
 
             logger.info("processamento");
-            if (mensagemf2.contains("create")) {
+            try {
 
-                String[] compare = mensagemf2.split("/");
+            if (RunServer.mensagemf2.contains("create")) {
+
+                String[] compare = RunServer.mensagemf2.split("/");
                 int chaveCompare = Integer.parseInt(compare[1]);
                 BigInteger keyCompare = BigInteger.valueOf(chaveCompare);
                 RunServer.map.get(keyCompare);
 
                 if (RunServer.map.get(keyCompare) == null && compare[2].length() < 1400 && chaveCompare < 5200) {
 
-                    String[] url = mensagemf2.split("/");
+                    String[] url = RunServer.mensagemf2.split("/");
 
                     int chave = Integer.parseInt(url[1]);
                     BigInteger key1 = BigInteger.valueOf(chave);
                     RunServer.map.put(key1, url[2]);
 
-                    RunServer.queuef2.remove();
+                    //RunServer.queuef2.remove();
 
                     logger.info("Mapa:" + RunServer.map);
                     logger.info("F2" + RunServer.queuef2);
@@ -74,19 +72,19 @@ public class Thread2 implements Runnable {
 
             }
 
-            if (mensagemf2.contains("read")) {
-                String[] compare = mensagemf2.split("/");
+            if (RunServer.mensagemf2.contains("read")) {
+                String[] compare = RunServer.mensagemf2.split("/");
                 int chaveCompare = Integer.parseInt(compare[1]);
                 BigInteger keyCompare = BigInteger.valueOf(chaveCompare);
                 RunServer.map.get(keyCompare);
 
                 if (RunServer.map.get(keyCompare) != null) {
-                    String[] url = mensagemf2.split("/");
+                    String[] url = RunServer.mensagemf2.split("/");
                     int chave = Integer.parseInt(url[1]);
                     BigInteger key1 = BigInteger.valueOf(chave);
                     logger.info("F2:" + key1 + "=" + RunServer.map.get(key1));
 
-                    RunServer.queuef2.remove();
+                    //RunServer.queuef2.remove();
                 } else {
                     System.out.println("Chave não está no mapa");
                 }
@@ -94,22 +92,22 @@ public class Thread2 implements Runnable {
 
             }
 
-            if (mensagemf2.contains("update")) {
-                String[] compare = mensagemf2.split("/");
+            if (RunServer.mensagemf2.contains("update")) {
+                String[] compare = RunServer.mensagemf2.split("/");
                 int chaveCompare = Integer.parseInt(compare[1]);
                 BigInteger keyCompare = BigInteger.valueOf(chaveCompare);
                 RunServer.map.get(keyCompare);
 
                 if (RunServer.map.get(keyCompare) != null && compare[2].length() < 1400) {
 
-                    String[] url = mensagemf2.split("/");
+                    String[] url = RunServer.mensagemf2.split("/");
 
                     int chave = Integer.parseInt(url[1]);
                     BigInteger key1 = BigInteger.valueOf(chave);
                     RunServer.map.remove(key1);
                     RunServer.map.put(key1, url[2]);
 
-                    RunServer.queuef2.remove();
+                    //RunServer.queuef2.remove();
                 } else {
                     System.out.println("chave não está no mapa ou tamanho do valor maior que 1400 bytes");
                 }
@@ -117,27 +115,27 @@ public class Thread2 implements Runnable {
             }
 
 
-            if (mensagemf2.contains("delete")) {
-                String[] compare = mensagemf2.split("/");
+            if (RunServer.mensagemf2.contains("delete")) {
+                String[] compare = RunServer.mensagemf2.split("/");
                 int chaveCompare = Integer.parseInt(compare[1]);
                 BigInteger keyCompare = BigInteger.valueOf(chaveCompare);
                 RunServer.map.get(keyCompare);
 
                 if (RunServer.map.get(keyCompare) != null) {
-                    String[] url = mensagemf2.split("/");
+                    String[] url = RunServer.mensagemf2.split("/");
 
                     int chave = Integer.parseInt(url[1]);
                     BigInteger key1 = BigInteger.valueOf(chave);
                     RunServer.map.remove(key1);
 
-                    RunServer.queuef2.remove();
+                    //RunServer.queuef2.remove();
                 } else {
                     System.out.println("Chave não está no mapa");
                 }
 
             }
 
-            try {
+
 
                 String mapa = RunServer.map.toString();
                 byte[] sendData = new byte[RunServer.map.size()];
