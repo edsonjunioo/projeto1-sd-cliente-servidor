@@ -25,7 +25,7 @@ public class Thread3 implements Runnable {
 
         while (true) {
             try {
-                RunServer.mensagem = RunServer.queue.take();
+                RunServer.mensagemf3 =  RunServer.queuef2.take();
             } catch (InterruptedException e){
                 continue;
             }

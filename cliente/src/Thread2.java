@@ -7,9 +7,6 @@ import java.net.DatagramSocket;
 public class Thread2 implements Runnable {
 
 
-    DatagramPacket receivePacket;
-
-    String modifiedSentence;
 
     public Thread2(DatagramSocket clientSocket){
         RunClient.clientSocket = clientSocket;
@@ -26,18 +23,22 @@ public class Thread2 implements Runnable {
         while (true) {
             logger.info("passou pelo run da Thread 2");
 
+
+
             try {
 
-
                 byte[] receiveData = new byte[1400];
-                receivePacket = new DatagramPacket(receiveData, receiveData.length);
+                RunClient.receivePacket = new DatagramPacket(receiveData, receiveData.length);
 
                 try {
-                    RunClient.clientSocket.receive(receivePacket);
+                    RunClient.clientSocket.receive(RunClient.receivePacket);
                 }catch (Exception e){
                     System.out.println(e.getMessage());
                 }
-                modifiedSentence = new String(receivePacket.getData(), 0, receivePacket.getLength());
+
+                String modifiedSentence = new String(RunClient.receivePacket.getData(), 0, RunClient.receivePacket.getLength());
+
+                RunClient.queue.add(modifiedSentence);
 
                 System.out.println("Mapa atualizado:" + modifiedSentence + " e mensagem recebida com sucesso\n");
 

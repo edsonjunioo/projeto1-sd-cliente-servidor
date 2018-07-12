@@ -25,11 +25,9 @@ public class RunServer {
 
     static String mensagemf2;
 
+    static String mensagemf3;
+
     static Map<BigInteger, String> map = new HashMap<>();
-
-    static InetAddress IPAddress;
-
-    static int port_defined;
 
     public static Properties getProp() throws IOException {
         Properties props = new Properties();
@@ -65,7 +63,7 @@ public class RunServer {
         t1.start();
 
 
-        Thread2 thread2 = new Thread2(mensagem,mensagemf2,map,queuef2,queuef3,serverSocket,IPAddress,port_defined);
+        Thread2 thread2 = new Thread2(mensagem,mensagemf2,map,queuef2,queuef3,serverSocket);
         Thread t2 = new Thread(thread2);
         t2.start();
 

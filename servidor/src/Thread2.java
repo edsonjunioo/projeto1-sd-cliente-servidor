@@ -13,13 +13,9 @@ public class Thread2 implements Runnable {
 
     final Logger logger = Logger.getLogger("Thread 2");
 
-    InetAddress IPAddress;
-
-    int port_defined;
 
 
-
-    public Thread2(String mensagem, String mensagemf2, Map<BigInteger,String> map, BlockingQueue<String> queuef2, BlockingQueue<String> queuef3, DatagramSocket serverSocket,InetAddress IPAddress,int port_defined){
+    public Thread2(String mensagem, String mensagemf2, Map<BigInteger,String> map, BlockingQueue<String> queuef2, BlockingQueue<String> queuef3, DatagramSocket serverSocket){
 
     }
 
@@ -66,9 +62,10 @@ public class Thread2 implements Runnable {
 
                     logger.info("Mapa:" + RunServer.map);
                     logger.info("F2" + RunServer.queuef2);
-                } else {
-                    System.out.println("chave já utilizada ou tamanho da chave/valor incompativeis");
                 }
+                //else {
+                //    System.out.println("chave já utilizada ou tamanho da chave/valor incompativeis");
+                //}
 
             }
 
@@ -137,11 +134,7 @@ public class Thread2 implements Runnable {
 
 
 
-                String mapa = RunServer.map.toString();
-                byte[] sendData = new byte[RunServer.map.size()];
-                sendData = mapa.getBytes();
-                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port_defined);
-                RunServer.serverSocket.send(sendPacket);
+
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
