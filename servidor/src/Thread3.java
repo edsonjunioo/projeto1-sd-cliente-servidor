@@ -4,6 +4,7 @@ import java.util.concurrent.BlockingQueue;
 
 public class Thread3 implements Runnable {
 
+    private int min = 70;
 
     public Thread3(BlockingQueue<String> queuef3){
         RunServer.queuef3 = queuef3;
@@ -39,6 +40,9 @@ public class Thread3 implements Runnable {
             } catch (Exception e) {
                 System.out.println("erro arquivo" + e.getMessage());
             }
+
+
+
         }
 
     }

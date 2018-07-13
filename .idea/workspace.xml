@@ -3,21 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="2dd0e35e-f8ab-4b6f-b310-55066ab04313" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/RunClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/RunClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/Thread1.java" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/Thread1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cliente/src/Thread2.java" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/src/Thread2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cliente/cliente.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cliente/cliente.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log4j-application-server.log" beforeDir="false" afterPath="$PROJECT_DIR$/log4j-application-server.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cliente/RunClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cliente/RunClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cliente/Thread1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cliente/Thread1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cliente/Thread2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cliente/Thread2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/servidor/RunServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/servidor/RunServer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/servidor/Thread1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/servidor/Thread1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/servidor/Thread2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/servidor/Thread2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/servidor/Thread3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/servidor/Thread3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projeto1-sd-cliente-servidor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/projeto1-sd-cliente-servidor.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servidor/disco/disco.txt" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/disco/disco.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servidor/servidor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/servidor.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servidor/src/RunServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/src/RunServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servidor/src/Thread1.java" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/src/Thread1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servidor/src/Thread2.java" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/src/Thread2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/servidor/src/Thread3.java" beforeDir="false" afterPath="$PROJECT_DIR$/servidor/src/Thread3.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -50,8 +45,54 @@
       <file leaf-file-name="Thread1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/servidor/src/Thread1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="155" column="13" lean-forward="true" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
+            <state relative-caret-position="238">
+              <caret line="162" selection-start-line="162" selection-end-line="162" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log4j.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/servidor/src/log4j.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="SnapshotServer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/servidor/src/SnapshotServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MutexServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/servidor/src/MutexServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+              <folding>
+                <element signature="e#126#127#0" expanded="true" />
+                <element signature="e#166#167#0" expanded="true" />
+                <element signature="e#191#192#0" expanded="true" />
+                <element signature="e#224#225#0" expanded="true" />
+                <element signature="e#252#253#0" expanded="true" />
+                <element signature="e#287#288#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Thread2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/servidor/src/Thread2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,20 +103,8 @@
       <file leaf-file-name="Thread3.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/servidor/src/Thread3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Thread2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/servidor/src/Thread2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+            <state relative-caret-position="-140">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,57 +117,28 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="Thread2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/src/Thread2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Thread1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/src/Thread1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1562">
-              <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GrpcClient.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cliente/src/GrpcClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-              <folding>
-                <element signature="e#120#121#0" expanded="true" />
-                <element signature="e#172#173#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+      <file leaf-file-name="snapshot.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/servidor/disco/snapshot.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="GrpcServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/servidor/src/GrpcServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="23" selection-start-column="23" selection-end-column="23" />
+            <state relative-caret-position="476">
+              <caret line="47" column="2" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#1547#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RunClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cliente/src/RunClient.java">
+      <file leaf-file-name="RunServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/servidor/src/RunServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="410">
+              <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -195,14 +195,24 @@
         <option value="$PROJECT_DIR$/servidor/src/Server.java" />
         <option value="$PROJECT_DIR$/servidor/disco/disco.txt" />
         <option value="$PROJECT_DIR$/log4j-application-server.log" />
-        <option value="$PROJECT_DIR$/servidor/src/Thread3.java" />
-        <option value="$PROJECT_DIR$/servidor/src/RunServer.java" />
         <option value="$PROJECT_DIR$/servidor/src/Thread2.java" />
-        <option value="$PROJECT_DIR$/servidor/src/Thread1.java" />
         <option value="$PROJECT_DIR$/cliente/src/RunClient.java" />
         <option value="$PROJECT_DIR$/cliente/src/Thread2.java" />
         <option value="$PROJECT_DIR$/cliente/src/Thread1.java" />
         <option value="$PROJECT_DIR$/cliente/src/GrpcClient.java" />
+        <option value="$PROJECT_DIR$/cliente/src/CallInterceptor.java" />
+        <option value="$PROJECT_DIR$/servidor/src/CallInterceptor.java" />
+        <option value="$PROJECT_DIR$/servidor/src/CallIntercepter.java" />
+        <option value="$PROJECT_DIR$/servidor/src/ExecuteCommandServiceGrpc.java" />
+        <option value="$PROJECT_DIR$/servidor/src/MutexServer.java" />
+        <option value="$PROJECT_DIR$/cliente/src/GrpcCliente.java" />
+        <option value="$PROJECT_DIR$/cliente/src/ExecuteCommandServiceGrpc.java" />
+        <option value="$PROJECT_DIR$/servidor/src/GrpcServer.java" />
+        <option value="$PROJECT_DIR$/servidor/disco/snapshot.txt" />
+        <option value="$PROJECT_DIR$/servidor/src/Thread3.java" />
+        <option value="$PROJECT_DIR$/servidor/src/Thread1.java" />
+        <option value="$PROJECT_DIR$/servidor/src/RunServer.java" />
+        <option value="$PROJECT_DIR$/servidor/src/SnapshotServer.java" />
       </list>
     </option>
   </component>
@@ -249,84 +259,59 @@
               <item name="projeto1-sd-cliente-servidor" type="b2602c69:ProjectViewProjectNode" />
               <item name="projeto1-sd-cliente-servidor" type="462c0819:PsiDirectoryNode" />
               <item name="cliente" type="462c0819:PsiDirectoryNode" />
-              <item name="properties" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projeto1-sd-cliente-servidor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projeto1-sd-cliente-servidor" type="462c0819:PsiDirectoryNode" />
-              <item name="cliente" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="projeto1-sd-cliente-servidor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="projeto1-sd-cliente-servidor" type="462c0819:PsiDirectoryNode" />
+              <item name="servidor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="projeto1-sd-cliente-servidor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="projeto1-sd-cliente-servidor" type="462c0819:PsiDirectoryNode" />
+              <item name="servidor" type="462c0819:PsiDirectoryNode" />
+              <item name="disco" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="projeto1-sd-cliente-servidor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
-            <path>
-              <item name="projeto1-sd-cliente-servidor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-              <item name="com.intellij.database" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-            </path>
-            <path>
-              <item name="projeto1-sd-cliente-servidor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-              <item name="com.intellij.database" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-              <item name="data" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-            </path>
-            <path>
-              <item name="projeto1-sd-cliente-servidor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-              <item name="com.intellij.database" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-              <item name="data" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-              <item name="extractors" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-            </path>
-            <path>
-              <item name="projeto1-sd-cliente-servidor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-              <item name="com.intellij.database" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
-              <item name="schema" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
+              <item name="projeto1-sd-cliente-servidor" type="462c0819:PsiDirectoryNode" />
+              <item name="servidor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/servidor/lib/log4j-1.2.17.jar!/" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jars_grpc/grpc-testing-proto-1.13.1.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.gradle.running" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/servidor/lib" />
+      <recent name="$PROJECT_DIR$/cliente/lib" />
+      <recent name="$PROJECT_DIR$/cliente/src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/cliente/src" />
       <recent name="$PROJECT_DIR$/cliente/lib" />
       <recent name="$PROJECT_DIR$/servidor/src" />
       <recent name="$PROJECT_DIR$/servidor/properties" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cliente/src" />
-      <recent name="$PROJECT_DIR$/servidor/lib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -341,7 +326,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.RunServer">
+  <component name="RunManager" selected="Application.RunClient">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -414,8 +399,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RunServer" />
         <item itemvalue="Application.RunClient" />
+        <item itemvalue="Application.RunServer" />
       </list>
     </recent_temporary>
   </component>
@@ -479,11 +464,15 @@
       <workItem from="1531260309509" duration="9872000" />
       <workItem from="1531315103736" duration="16887000" />
       <workItem from="1531348489246" duration="5026000" />
+      <workItem from="1531423895681" duration="7809000" />
+      <workItem from="1531434457882" duration="6224000" />
+      <workItem from="1531440862961" duration="447000" />
+      <workItem from="1531449156274" duration="5261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254766000" />
+    <option name="totallyTimeSpent" value="274507000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -495,7 +484,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="70" y="-5" width="1851" height="1086" extended-state="6" />
+    <frame x="71" y="-5" width="1849" height="1085" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32900432" />
@@ -506,23 +495,23 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5027581" side_tool="true" weight="0.5054432" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32939324" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4972419" visible="true" weight="0.2792208" />
       <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4972419" visible="true" weight="0.2792208" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32683983" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27718908" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29336306" />
       <window_info anchor="right" id="Database" order="6" weight="0.32961518" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32761312" />
       <window_info id="Learn" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.29978356" />
       <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29978356" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32683983" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32939324" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -530,32 +519,32 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4972419" visible="true" weight="0.40873635" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32970452" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32387707" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970452" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4972419" visible="true" weight="0.40873635" />
       <window_info id="Image Layers" order="6" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info id="Learn" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3990964" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5027581" side_tool="true" weight="0.5054432" />
       <window_info id="Capture Tool" order="2" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32970452" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32970452" />
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32939324" />
       <window_info id="Favorites" order="5" side_tool="true" />
     </layout-to-restore>
@@ -672,39 +661,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cliente/src/RunClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/ThreadClientResponse.java" />
-    <entry file="file://$PROJECT_DIR$/cliente/src/Client3.java" />
-    <entry file="file://$PROJECT_DIR$/servidor/src/Server.java" />
-    <entry file="file://$PROJECT_DIR$/cliente/src/RunClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/src/RunServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/ThreadClientResponse.java" />
-    <entry file="file://$PROJECT_DIR$/cliente/src/Client3.java" />
-    <entry file="file://$PROJECT_DIR$/cliente/src/RunClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/servidor/src/RunServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -780,9 +736,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/Thread.java" />
     <entry file="file://$PROJECT_DIR$/cliente/src/Client1.java" />
-    <entry file="file://$PROJECT_DIR$/servidor/src/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Properties.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-12">
@@ -802,13 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/AbstractQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -818,16 +764,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/servidor/servidor.iml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/src/RunServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="65" column="90" selection-start-line="65" selection-start-column="90" selection-end-line="65" selection-end-column="90" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -839,30 +775,18 @@
     <entry file="file://$PROJECT_DIR$/log4j-application-server.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/src/Thread3.java">
+    <entry file="file://$PROJECT_DIR$/servidor/src/CallIntercepter.java" />
+    <entry file="file://$PROJECT_DIR$/cliente/src/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="110">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/src/Thread1.java">
+    <entry file="file://$PROJECT_DIR$/cliente/src/RunClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="155" column="13" lean-forward="true" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/src/Thread2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+        <state relative-caret-position="286">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -871,7 +795,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/Thread2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
+        <state relative-caret-position="704">
           <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -879,20 +803,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/disco/disco.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/servidor/src/GrpcServer.java">
+    <entry file="file://$PROJECT_DIR$/servidor/src/CallIntercepter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/RunClient.java">
+    <entry file="file://$PROJECT_DIR$/servidor/src/CallIntercepter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="44">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -901,21 +825,113 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cliente/src/Thread1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1562">
-          <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+        <state relative-caret-position="462">
+          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="30" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cliente/src/GrpcClient.java">
+    <entry file="file://$PROJECT_DIR$/cliente/src/ExecuteCommandServiceGrpc.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliente/src/GrpcCliente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        <state relative-caret-position="506">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
           <folding>
-            <element signature="e#120#121#0" expanded="true" />
-            <element signature="e#172#173#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/src/MutexServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <element signature="e#126#127#0" expanded="true" />
+            <element signature="e#166#167#0" expanded="true" />
+            <element signature="e#191#192#0" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#287#288#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/disco/snapshot.dat">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/disco/observers.dat">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/src/GrpcServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="47" column="2" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#1547#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/src/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/src/Thread2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/src/Thread3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/src/Thread1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="162" selection-start-line="162" selection-end-line="162" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/src/RunServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/disco/snapshot.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/disco/disco.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/servidor/src/SnapshotServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -937,7 +953,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -972,7 +988,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>cliente</last-edited>
+          <last-edited>servidor</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

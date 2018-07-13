@@ -72,6 +72,10 @@ public class RunServer {
         Thread t3 = new Thread(thread3);
         t3.start();
 
+        SnapshotServer snapshotServer = new SnapshotServer();
+        Thread t4 = new Thread(snapshotServer);
+        t4.start();
+
 
 
     }

@@ -160,6 +160,8 @@ public class Thread1 implements Runnable {
                 RunServer.serverSocket.send(sendPacket);
 
 
+
+
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
