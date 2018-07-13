@@ -12,13 +12,25 @@ public class Thread1 implements Runnable {
 
     String[] backupComandos;
 
+    String texto;
+
+    String snapshot;
+
+    FileInputStream fileInputStream;
+
+    FileInputStream fileInputStream2;
+
+    ObjectInputStream objectInputStream;
+
+    ObjectInputStream objectInputStream2;
+
 
     public Thread1(DatagramSocket serverSocket){
         RunServer.serverSocket = serverSocket;
     }
 
     @Override
-    synchronized public void run(){
+    public void run(){
 
 
         final Logger logger = Logger.getLogger("server");
@@ -30,13 +42,23 @@ public class Thread1 implements Runnable {
         try {
 
 
-            FileInputStream fileInputStream = new FileInputStream("./servidor/disco/disco.txt");
+            fileInputStream = new FileInputStream("./servidor/disco/disco.txt");
 
-            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            objectInputStream = new ObjectInputStream(fileInputStream);
 
-            String texto = objectInputStream.readObject().toString();
+            texto = objectInputStream.readObject().toString();
 
-            logger.info("comandos recuperados: " + texto);
+
+            fileInputStream2 = new FileInputStream("./servidor/disco/snapshot.txt");
+
+            objectInputStream2 = new ObjectInputStream(fileInputStream2);
+
+            snapshot = objectInputStream2.readObject().toString();
+
+
+
+
+
 
             backupComandos = texto.replace("[","").replace("]","").split(",");
 
@@ -122,6 +144,8 @@ public class Thread1 implements Runnable {
             System.out.println(e.getMessage());
         }
 
+        logger.info("comandos recuperados: " + this.texto);
+        logger.info("ultimo snapshot gerado: " + this.snapshot);
         logger.info("Mapa recuperado" + RunServer.map);
 
         while (true) {

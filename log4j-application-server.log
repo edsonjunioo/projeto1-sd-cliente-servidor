@@ -671,3 +671,420 @@
 2018-07-13 01:03:44,508 [Thread-1]  INFO server:43 - processamento
 2018-07-13 01:03:44,509 [Thread-1]  INFO server:63 - Mapa:{1=teste, 67=teste67}
 2018-07-13 01:03:44,509 [Thread-1]  INFO server:64 - F2[create/67/teste67]
+2018-07-13 01:25:37,535 [main]  INFO client:36 - passou pelo main client
+2018-07-13 01:25:37,542 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 01:25:43,055 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 01:25:43,063 [Thread-0]  INFO server:25 - Thread1
+2018-07-13 01:25:43,064 [Thread-0]  INFO server:28 - Conexão do servidor iniciada
+2018-07-13 01:25:43,153 [Thread-0]  INFO server:39 - comandos recuperados: [create/1/teste, create/67/teste67]
+2018-07-13 01:25:43,155 [Thread-0]  INFO server:125 - Mapa recuperado{1=teste, 67=teste67}
+2018-07-13 01:25:59,471 [Thread-0]  INFO server:137 - Recebido: create/5/teste
+2018-07-13 01:25:59,476 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 01:25:59,477 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 01:25:59,478 [Thread-1]  INFO server:41 - Mapa{1=teste, 67=teste67}
+2018-07-13 01:25:59,478 [Thread-1]  INFO server:43 - processamento
+2018-07-13 01:25:59,479 [Thread-0]  INFO server:148 - F1[]
+2018-07-13 01:25:59,480 [Thread-0]  INFO server:149 - Mapa{1=teste, 67=teste67}
+2018-07-13 01:25:59,480 [Thread-0]  INFO server:150 - F2[]
+2018-07-13 01:25:59,481 [Thread-0]  INFO server:151 - F3[create/1/teste,  create/67/teste67, create/5/teste]
+2018-07-13 01:26:31,845 [Thread-0]  INFO server:137 - Recebido: create/11/teste11
+2018-07-13 01:26:31,846 [Thread-0]  INFO server:148 - F1[create/11/teste11]
+2018-07-13 01:26:31,847 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 01:26:31,860 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 01:26:31,860 [Thread-1]  INFO server:41 - Mapa{1=teste, 67=teste67}
+2018-07-13 01:26:31,861 [Thread-1]  INFO server:43 - processamento
+2018-07-13 01:26:31,862 [Thread-0]  INFO server:149 - Mapa{1=teste, 67=teste67}
+2018-07-13 01:26:31,863 [Thread-0]  INFO server:150 - F2[]
+2018-07-13 01:26:31,864 [Thread-0]  INFO server:151 - F3[create/1/teste,  create/67/teste67, create/5/teste, create/11/teste11]
+2018-07-13 01:28:46,021 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 01:28:46,025 [Thread-0]  INFO server:25 - Thread1
+2018-07-13 01:28:46,025 [Thread-0]  INFO server:28 - Conexão do servidor iniciada
+2018-07-13 01:28:46,080 [Thread-0]  INFO server:39 - comandos recuperados: [create/1/teste,  create/67/teste67, create/5/teste, create/11/teste11]
+2018-07-13 01:28:46,093 [Thread-0]  INFO server:125 - Mapa recuperado{1=teste, 67=teste67, 5=teste, 11=teste11}
+2018-07-13 01:28:49,543 [main]  INFO client:36 - passou pelo main client
+2018-07-13 01:28:49,547 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 01:29:09,206 [Thread-0]  INFO server:137 - Recebido: create/99/teste99
+2018-07-13 01:29:09,209 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 01:29:09,210 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 01:29:09,211 [Thread-1]  INFO server:41 - Mapa{1=teste, 67=teste67, 5=teste, 11=teste11}
+2018-07-13 01:29:09,211 [Thread-1]  INFO server:43 - processamento
+2018-07-13 01:29:09,213 [Thread-0]  INFO server:148 - F1[]
+2018-07-13 01:29:09,214 [Thread-0]  INFO server:149 - Mapa{1=teste, 67=teste67, 5=teste, 11=teste11}
+2018-07-13 01:29:09,215 [Thread-0]  INFO server:150 - F2[]
+2018-07-13 01:29:09,215 [Thread-0]  INFO server:151 - F3[create/1/teste,   create/67/teste67,  create/5/teste,  create/11/teste11, create/99/teste99]
+2018-07-13 01:29:54,708 [Thread-0]  INFO server:137 - Recebido: create/101/teste101
+2018-07-13 01:29:54,709 [Thread-0]  INFO server:148 - F1[create/101/teste101]
+2018-07-13 01:29:54,715 [Thread-0]  INFO server:149 - Mapa{1=teste, 67=teste67, 5=teste, 11=teste11}
+2018-07-13 01:29:54,716 [Thread-0]  INFO server:150 - F2[]
+2018-07-13 01:29:54,717 [Thread-0]  INFO server:151 - F3[create/1/teste,   create/67/teste67,  create/5/teste,  create/11/teste11, create/99/teste99, create/101/teste101]
+2018-07-13 01:29:54,709 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 01:29:54,719 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 01:29:54,719 [Thread-1]  INFO server:41 - Mapa{1=teste, 67=teste67, 5=teste, 11=teste11}
+2018-07-13 01:29:54,720 [Thread-1]  INFO server:43 - processamento
+2018-07-13 01:32:17,381 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 01:32:17,386 [Thread-0]  INFO server:25 - Thread1
+2018-07-13 01:32:17,386 [Thread-0]  INFO server:28 - Conexão do servidor iniciada
+2018-07-13 01:32:17,478 [Thread-0]  INFO server:39 - comandos recuperados: [create/1/teste,   create/67/teste67,  create/5/teste,  create/11/teste11, create/99/teste99, create/101/teste101]
+2018-07-13 01:32:17,487 [Thread-0]  INFO server:125 - Mapa recuperado{1=teste, 67=teste67, 99=teste99, 5=teste, 101=teste101, 11=teste11}
+2018-07-13 01:32:22,892 [main]  INFO client:36 - passou pelo main client
+2018-07-13 01:32:22,896 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 01:32:34,950 [Thread-0]  INFO server:137 - Recebido: create/1/teste
+2018-07-13 01:32:34,954 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 01:32:34,954 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 01:32:34,955 [Thread-1]  INFO server:41 - Mapa{1=teste, 67=teste67, 99=teste99, 5=teste, 101=teste101, 11=teste11}
+2018-07-13 01:32:34,956 [Thread-1]  INFO server:43 - processamento
+2018-07-13 01:32:34,957 [Thread-0]  INFO server:148 - F1[]
+2018-07-13 01:32:34,958 [Thread-0]  INFO server:149 - Mapa{1=teste, 67=teste67, 99=teste99, 5=teste, 101=teste101, 11=teste11}
+2018-07-13 01:32:34,958 [Thread-0]  INFO server:150 - F2[]
+2018-07-13 01:32:34,959 [Thread-0]  INFO server:151 - F3[create/1/teste,    create/67/teste67,   create/5/teste,   create/11/teste11,  create/99/teste99,  create/101/teste101, create/1/teste]
+2018-07-13 10:09:50,497 [main]  INFO client:36 - passou pelo main client
+2018-07-13 10:09:50,538 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 10:10:00,527 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 10:10:00,535 [Thread-0]  INFO server:25 - Thread1
+2018-07-13 10:10:00,536 [Thread-0]  INFO server:28 - Conexão do servidor iniciada
+2018-07-13 10:10:00,694 [Thread-0]  INFO server:39 - comandos recuperados: [create/1/teste,    create/67/teste67,   create/5/teste,   create/11/teste11,  create/99/teste99,  create/101/teste101, create/1/teste]
+2018-07-13 10:10:00,705 [Thread-0]  INFO server:125 - Mapa recuperado{1=teste, 67=teste67, 99=teste99, 5=teste, 101=teste101, 11=teste11}
+2018-07-13 10:10:19,486 [Thread-0]  INFO server:137 - Recebido: create/16/teste16
+2018-07-13 10:10:19,487 [Thread-0]  INFO server:148 - F1[create/16/teste16]
+2018-07-13 10:10:19,488 [Thread-0]  INFO server:149 - Mapa{1=teste, 67=teste67, 99=teste99, 5=teste, 101=teste101, 11=teste11}
+2018-07-13 10:10:19,488 [Thread-0]  INFO server:150 - F2[create/16/teste16]
+2018-07-13 10:10:19,488 [Thread-0]  INFO server:151 - F3[create/1/teste,     create/67/teste67,    create/5/teste,    create/11/teste11,   create/99/teste99,   create/101/teste101,  create/1/teste, create/16/teste16]
+2018-07-13 10:10:19,488 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 10:10:19,489 [Thread-1]  INFO server:40 - Log em disco[create/16/teste16]
+2018-07-13 10:10:19,489 [Thread-1]  INFO server:41 - Mapa{1=teste, 67=teste67, 99=teste99, 5=teste, 101=teste101, 11=teste11}
+2018-07-13 10:10:19,489 [Thread-1]  INFO server:43 - processamento
+2018-07-13 10:10:19,489 [Thread-1]  INFO server:63 - Mapa:{16=teste16, 1=teste, 67=teste67, 99=teste99, 5=teste, 101=teste101, 11=teste11}
+2018-07-13 10:10:19,489 [Thread-1]  INFO server:64 - F2[create/16/teste16]
+2018-07-13 11:38:05,077 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 11:38:05,086 [Thread-0]  INFO server:25 - Thread1
+2018-07-13 11:38:05,086 [Thread-0]  INFO server:28 - Conexão do servidor iniciada
+2018-07-13 11:38:05,156 [Thread-0]  INFO server:39 - comandos recuperados: [create/1/teste,     create/67/teste67,    create/5/teste,    create/11/teste11,   create/99/teste99,   create/101/teste101,  create/1/teste, create/16/teste16]
+2018-07-13 11:38:05,184 [Thread-0]  INFO server:125 - Mapa recuperado{16=teste16, 1=teste, 67=teste67, 99=teste99, 5=teste, 101=teste101, 11=teste11}
+2018-07-13 11:38:12,123 [main]  INFO client:36 - passou pelo main client
+2018-07-13 11:38:12,128 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 11:38:48,720 [Thread-0]  INFO server:137 - Recebido: create/62/teste62
+2018-07-13 11:38:48,721 [Thread-0]  INFO server:148 - F1[create/62/teste62]
+2018-07-13 11:38:48,722 [Thread-0]  INFO server:149 - Mapa{16=teste16, 1=teste, 67=teste67, 99=teste99, 5=teste, 101=teste101, 11=teste11}
+2018-07-13 11:38:48,722 [Thread-0]  INFO server:150 - F2[create/62/teste62]
+2018-07-13 11:38:48,722 [Thread-0]  INFO server:151 - F3[create/1/teste,      create/67/teste67,     create/5/teste,     create/11/teste11,    create/99/teste99,    create/101/teste101,   create/1/teste,  create/16/teste16, create/62/teste62]
+2018-07-13 11:38:48,723 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 11:38:48,723 [Thread-1]  INFO server:40 - Log em disco[create/62/teste62]
+2018-07-13 11:38:48,723 [Thread-1]  INFO server:41 - Mapa{16=teste16, 1=teste, 67=teste67, 99=teste99, 5=teste, 101=teste101, 11=teste11}
+2018-07-13 11:38:48,724 [Thread-1]  INFO server:43 - processamento
+2018-07-13 11:38:48,724 [Thread-1]  INFO server:63 - Mapa:{16=teste16, 1=teste, 67=teste67, 99=teste99, 5=teste, 101=teste101, 11=teste11, 62=teste62}
+2018-07-13 11:38:48,724 [Thread-1]  INFO server:64 - F2[create/62/teste62]
+2018-07-13 11:39:38,634 [Thread-0]  INFO server:137 - Recebido: create/32/teste32
+2018-07-13 11:39:38,635 [Thread-0]  INFO server:148 - F1[create/32/teste32]
+2018-07-13 11:39:38,635 [Thread-0]  INFO server:149 - Mapa{16=teste16, 1=teste, 67=teste67, 99=teste99, 5=teste, 101=teste101, 11=teste11, 62=teste62}
+2018-07-13 11:39:38,635 [Thread-0]  INFO server:150 - F2[create/32/teste32]
+2018-07-13 11:39:38,636 [Thread-0]  INFO server:151 - F3[create/1/teste,      create/67/teste67,     create/5/teste,     create/11/teste11,    create/99/teste99,    create/101/teste101,   create/1/teste,  create/16/teste16, create/62/teste62, create/32/teste32]
+2018-07-13 11:39:38,636 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 11:39:38,636 [Thread-1]  INFO server:40 - Log em disco[create/32/teste32]
+2018-07-13 11:39:38,637 [Thread-1]  INFO server:41 - Mapa{16=teste16, 1=teste, 67=teste67, 99=teste99, 5=teste, 101=teste101, 11=teste11, 62=teste62}
+2018-07-13 11:39:38,637 [Thread-1]  INFO server:43 - processamento
+2018-07-13 11:39:38,637 [Thread-1]  INFO server:63 - Mapa:{16=teste16, 32=teste32, 1=teste, 67=teste67, 99=teste99, 5=teste, 101=teste101, 11=teste11, 62=teste62}
+2018-07-13 11:39:38,638 [Thread-1]  INFO server:64 - F2[create/32/teste32]
+2018-07-13 11:43:12,247 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 11:43:12,251 [Thread-0]  INFO server:25 - Thread1
+2018-07-13 11:43:12,251 [Thread-0]  INFO server:28 - Conexão do servidor iniciada
+2018-07-13 11:43:12,304 [Thread-0]  INFO server:125 - Mapa recuperado{}
+2018-07-13 11:43:17,490 [main]  INFO client:36 - passou pelo main client
+2018-07-13 11:43:17,500 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 11:44:52,648 [main]  INFO client:36 - passou pelo main client
+2018-07-13 11:44:52,653 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 11:44:58,055 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 11:44:58,063 [Thread-0]  INFO server:25 - Thread1
+2018-07-13 11:44:58,063 [Thread-0]  INFO server:28 - Conexão do servidor iniciada
+2018-07-13 11:44:58,118 [Thread-0]  INFO server:125 - Mapa recuperado{}
+2018-07-13 11:45:12,833 [Thread-0]  INFO server:137 - Recebido: create/2/teste2
+2018-07-13 11:45:12,834 [Thread-0]  INFO server:148 - F1[create/2/teste2]
+2018-07-13 11:45:12,836 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 11:45:12,841 [Thread-0]  INFO server:149 - Mapa{}
+2018-07-13 11:45:12,841 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 11:45:12,841 [Thread-0]  INFO server:150 - F2[]
+2018-07-13 11:45:12,841 [Thread-1]  INFO server:41 - Mapa{}
+2018-07-13 11:45:12,842 [Thread-0]  INFO server:151 - F3[create/2/teste2]
+2018-07-13 11:45:12,842 [Thread-1]  INFO server:43 - processamento
+2018-07-13 11:45:33,139 [Thread-0]  INFO server:137 - Recebido: create/3/teste3
+2018-07-13 11:45:33,140 [Thread-0]  INFO server:148 - F1[create/3/teste3]
+2018-07-13 11:45:33,141 [Thread-0]  INFO server:149 - Mapa{}
+2018-07-13 11:45:33,143 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 11:45:33,151 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 11:45:33,152 [Thread-1]  INFO server:41 - Mapa{}
+2018-07-13 11:45:33,151 [Thread-0]  INFO server:150 - F2[]
+2018-07-13 11:45:33,152 [Thread-1]  INFO server:43 - processamento
+2018-07-13 11:45:33,153 [Thread-0]  INFO server:151 - F3[create/2/teste2, create/3/teste3]
+2018-07-13 11:45:54,694 [Thread-0]  INFO server:137 - Recebido: create/6/teste6
+2018-07-13 11:45:54,694 [Thread-0]  INFO server:148 - F1[create/6/teste6]
+2018-07-13 11:45:54,695 [Thread-0]  INFO server:149 - Mapa{}
+2018-07-13 11:45:54,695 [Thread-0]  INFO server:150 - F2[create/6/teste6]
+2018-07-13 11:45:54,695 [Thread-0]  INFO server:151 - F3[create/2/teste2, create/3/teste3, create/6/teste6]
+2018-07-13 11:45:54,695 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 11:45:54,696 [Thread-1]  INFO server:40 - Log em disco[create/6/teste6]
+2018-07-13 11:45:54,696 [Thread-1]  INFO server:41 - Mapa{}
+2018-07-13 11:45:54,696 [Thread-1]  INFO server:43 - processamento
+2018-07-13 11:45:54,700 [Thread-1]  INFO server:63 - Mapa:{6=teste6}
+2018-07-13 11:45:54,700 [Thread-1]  INFO server:64 - F2[]
+2018-07-13 11:46:38,596 [Thread-0]  INFO server:137 - Recebido: create/9/teste9
+2018-07-13 11:46:38,596 [Thread-0]  INFO server:148 - F1[create/9/teste9]
+2018-07-13 11:46:38,597 [Thread-0]  INFO server:149 - Mapa{6=teste6}
+2018-07-13 11:46:38,597 [Thread-0]  INFO server:150 - F2[create/9/teste9]
+2018-07-13 11:46:38,597 [Thread-0]  INFO server:151 - F3[create/9/teste9]
+2018-07-13 11:46:38,598 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 11:46:38,598 [Thread-1]  INFO server:40 - Log em disco[create/9/teste9]
+2018-07-13 11:46:38,598 [Thread-1]  INFO server:41 - Mapa{6=teste6}
+2018-07-13 11:46:38,598 [Thread-1]  INFO server:43 - processamento
+2018-07-13 11:46:38,599 [Thread-1]  INFO server:63 - Mapa:{6=teste6, 9=teste9}
+2018-07-13 11:46:38,599 [Thread-1]  INFO server:64 - F2[create/9/teste9]
+2018-07-13 11:47:24,607 [Thread-0]  INFO server:137 - Recebido: create/7/teste7
+2018-07-13 11:47:24,607 [Thread-0]  INFO server:148 - F1[create/7/teste7]
+2018-07-13 11:47:24,607 [Thread-0]  INFO server:149 - Mapa{6=teste6, 9=teste9}
+2018-07-13 11:47:24,607 [Thread-0]  INFO server:150 - F2[create/7/teste7]
+2018-07-13 11:47:24,608 [Thread-0]  INFO server:151 - F3[create/7/teste7]
+2018-07-13 11:47:24,608 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 11:47:24,608 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 11:47:24,609 [Thread-1]  INFO server:41 - Mapa{6=teste6, 9=teste9}
+2018-07-13 11:47:24,609 [Thread-1]  INFO server:43 - processamento
+2018-07-13 11:47:24,609 [Thread-1]  INFO server:63 - Mapa:{6=teste6, 7=teste7, 9=teste9}
+2018-07-13 11:47:24,609 [Thread-1]  INFO server:64 - F2[]
+2018-07-13 11:55:41,178 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 11:55:41,186 [Thread-0]  INFO server:25 - Thread1
+2018-07-13 11:55:41,186 [Thread-0]  INFO server:28 - Conexão do servidor iniciada
+2018-07-13 11:55:41,303 [Thread-0]  INFO server:136 - Mapa recuperado{}
+2018-07-13 11:55:53,303 [main]  INFO client:36 - passou pelo main client
+2018-07-13 11:55:53,309 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 11:56:07,302 [Thread-0]  INFO server:148 - Recebido: create/5/teste5
+2018-07-13 11:56:07,303 [Thread-0]  INFO server:159 - F1[create/5/teste5]
+2018-07-13 11:56:07,304 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 11:56:07,311 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 11:56:07,311 [Thread-1]  INFO server:41 - Mapa{}
+2018-07-13 11:56:07,311 [Thread-1]  INFO server:43 - processamento
+2018-07-13 11:56:07,312 [Thread-0]  INFO server:160 - Mapa{}
+2018-07-13 11:56:07,312 [Thread-0]  INFO server:161 - F2[]
+2018-07-13 11:56:07,313 [Thread-0]  INFO server:162 - F3[create/5/teste5]
+2018-07-13 11:56:36,554 [Thread-0]  INFO server:148 - Recebido: create/10/teste10
+2018-07-13 11:56:36,554 [Thread-0]  INFO server:159 - F1[create/10/teste10]
+2018-07-13 11:56:36,554 [Thread-0]  INFO server:160 - Mapa{}
+2018-07-13 11:56:36,557 [Thread-0]  INFO server:161 - F2[create/10/teste10]
+2018-07-13 11:56:36,557 [Thread-0]  INFO server:162 - F3[create/5/teste5, create/10/teste10]
+2018-07-13 11:56:36,558 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 11:56:36,562 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 11:56:36,562 [Thread-1]  INFO server:41 - Mapa{}
+2018-07-13 11:56:36,562 [Thread-1]  INFO server:43 - processamento
+2018-07-13 11:57:07,140 [Thread-0]  INFO server:148 - Recebido: create/61/teste61
+2018-07-13 11:57:07,141 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 11:57:07,141 [Thread-1]  INFO server:40 - Log em disco[create/61/teste61]
+2018-07-13 11:57:07,141 [Thread-1]  INFO server:41 - Mapa{}
+2018-07-13 11:57:07,142 [Thread-1]  INFO server:43 - processamento
+2018-07-13 11:57:07,141 [Thread-0]  INFO server:159 - F1[]
+2018-07-13 11:57:07,142 [Thread-0]  INFO server:160 - Mapa{}
+2018-07-13 11:57:07,142 [Thread-0]  INFO server:161 - F2[]
+2018-07-13 11:57:07,143 [Thread-0]  INFO server:162 - F3[create/61/teste61]
+2018-07-13 11:57:16,993 [Thread-0]  INFO server:148 - Recebido: create/52/teste52
+2018-07-13 11:57:16,994 [Thread-0]  INFO server:159 - F1[create/52/teste52]
+2018-07-13 11:57:16,994 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 11:57:16,994 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 11:57:16,994 [Thread-1]  INFO server:41 - Mapa{}
+2018-07-13 11:57:16,995 [Thread-1]  INFO server:43 - processamento
+2018-07-13 11:57:16,994 [Thread-0]  INFO server:160 - Mapa{}
+2018-07-13 11:57:16,995 [Thread-0]  INFO server:161 - F2[]
+2018-07-13 11:57:16,995 [Thread-0]  INFO server:162 - F3[create/61/teste61, create/52/teste52]
+2018-07-13 11:58:08,032 [Thread-0]  INFO server:148 - Recebido: create/56/teste56
+2018-07-13 11:58:08,033 [Thread-0]  INFO server:159 - F1[create/56/teste56]
+2018-07-13 11:58:08,033 [Thread-0]  INFO server:160 - Mapa{}
+2018-07-13 11:58:08,033 [Thread-0]  INFO server:161 - F2[create/56/teste56]
+2018-07-13 11:58:08,033 [Thread-0]  INFO server:162 - F3[create/56/teste56]
+2018-07-13 11:58:08,034 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 11:58:08,034 [Thread-1]  INFO server:40 - Log em disco[create/56/teste56]
+2018-07-13 11:58:08,034 [Thread-1]  INFO server:41 - Mapa{}
+2018-07-13 11:58:08,034 [Thread-1]  INFO server:43 - processamento
+2018-07-13 11:58:08,044 [Thread-1]  INFO server:63 - Mapa:{56=teste56}
+2018-07-13 11:58:08,045 [Thread-1]  INFO server:64 - F2[]
+2018-07-13 12:01:36,514 [main]  INFO client:36 - passou pelo main client
+2018-07-13 12:01:36,519 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 12:01:42,354 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 12:01:42,359 [Thread-0]  INFO server:29 - Thread1
+2018-07-13 12:01:42,359 [Thread-0]  INFO server:32 - Conexão do servidor iniciada
+2018-07-13 12:01:42,423 [Thread-0]  INFO server:139 - comandos recuperados: [create/56/teste56]
+2018-07-13 12:01:42,423 [Thread-0]  INFO server:140 - ultimo snapshot gerado: {}
+2018-07-13 12:01:42,423 [Thread-0]  INFO server:141 - Mapa recuperado{56=teste56}
+2018-07-13 12:02:27,375 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 12:02:27,381 [Thread-0]  INFO server:29 - Thread1
+2018-07-13 12:02:27,381 [Thread-0]  INFO server:32 - Conexão do servidor iniciada
+2018-07-13 12:02:27,472 [Thread-0]  INFO server:139 - comandos recuperados: [create/56/teste56]
+2018-07-13 12:02:27,473 [Thread-0]  INFO server:140 - ultimo snapshot gerado: {}
+2018-07-13 12:02:27,473 [Thread-0]  INFO server:141 - Mapa recuperado{56=teste56}
+2018-07-13 12:02:31,899 [main]  INFO client:36 - passou pelo main client
+2018-07-13 12:02:31,909 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 12:03:40,929 [main]  INFO client:36 - passou pelo main client
+2018-07-13 12:03:40,933 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 12:03:45,546 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 12:03:45,551 [Thread-0]  INFO server:29 - Thread1
+2018-07-13 12:03:45,551 [Thread-0]  INFO server:32 - Conexão do servidor iniciada
+2018-07-13 12:03:45,665 [Thread-0]  INFO server:139 - comandos recuperados: null
+2018-07-13 12:03:45,665 [Thread-0]  INFO server:140 - ultimo snapshot gerado: null
+2018-07-13 12:03:45,666 [Thread-0]  INFO server:141 - Mapa recuperado{}
+2018-07-13 12:06:00,639 [Thread-0]  INFO server:153 - Recebido: create/6/teste6
+2018-07-13 12:06:00,640 [Thread-0]  INFO server:164 - F1[create/6/teste6]
+2018-07-13 12:06:00,641 [Thread-0]  INFO server:165 - Mapa{}
+2018-07-13 12:06:00,641 [Thread-0]  INFO server:166 - F2[create/6/teste6]
+2018-07-13 12:06:00,642 [Thread-0]  INFO server:167 - F3[create/6/teste6]
+2018-07-13 12:06:00,643 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 12:06:00,643 [Thread-1]  INFO server:40 - Log em disco[create/6/teste6]
+2018-07-13 12:06:00,643 [Thread-1]  INFO server:41 - Mapa{}
+2018-07-13 12:06:00,644 [Thread-1]  INFO server:43 - processamento
+2018-07-13 12:06:00,650 [Thread-1]  INFO server:63 - Mapa:{6=teste6}
+2018-07-13 12:06:00,654 [Thread-1]  INFO server:64 - F2[]
+2018-07-13 12:06:42,127 [Thread-0]  INFO server:153 - Recebido: create/8/teste8
+2018-07-13 12:06:42,128 [Thread-0]  INFO server:164 - F1[create/8/teste8]
+2018-07-13 12:06:42,128 [Thread-0]  INFO server:165 - Mapa{6=teste6}
+2018-07-13 12:06:42,128 [Thread-0]  INFO server:166 - F2[create/8/teste8]
+2018-07-13 12:06:42,128 [Thread-0]  INFO server:167 - F3[create/6/teste6, create/8/teste8]
+2018-07-13 12:06:42,129 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 12:06:42,129 [Thread-1]  INFO server:40 - Log em disco[create/8/teste8]
+2018-07-13 12:06:42,129 [Thread-1]  INFO server:41 - Mapa{6=teste6}
+2018-07-13 12:06:42,129 [Thread-1]  INFO server:43 - processamento
+2018-07-13 12:06:42,129 [Thread-1]  INFO server:63 - Mapa:{6=teste6, 8=teste8}
+2018-07-13 12:06:42,130 [Thread-1]  INFO server:64 - F2[create/8/teste8]
+2018-07-13 12:07:11,625 [Thread-0]  INFO server:153 - Recebido: create/11/teste11
+2018-07-13 12:07:11,626 [Thread-0]  INFO server:164 - F1[create/11/teste11]
+2018-07-13 12:07:11,626 [Thread-0]  INFO server:165 - Mapa{6=teste6, 8=teste8}
+2018-07-13 12:07:11,626 [Thread-0]  INFO server:166 - F2[]
+2018-07-13 12:07:11,627 [Thread-0]  INFO server:167 - F3[create/11/teste11]
+2018-07-13 12:07:11,627 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 12:07:11,627 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 12:07:11,628 [Thread-1]  INFO server:41 - Mapa{6=teste6, 8=teste8}
+2018-07-13 12:07:11,628 [Thread-1]  INFO server:43 - processamento
+2018-07-13 12:07:11,628 [Thread-1]  INFO server:63 - Mapa:{6=teste6, 8=teste8, 11=teste11}
+2018-07-13 12:07:11,628 [Thread-1]  INFO server:64 - F2[]
+2018-07-13 12:08:28,179 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 12:08:28,183 [Thread-0]  INFO server:29 - Thread1
+2018-07-13 12:08:28,184 [Thread-0]  INFO server:32 - Conexão do servidor iniciada
+2018-07-13 12:08:28,248 [Thread-0]  INFO server:139 - comandos recuperados: null
+2018-07-13 12:08:28,249 [Thread-0]  INFO server:140 - ultimo snapshot gerado: null
+2018-07-13 12:08:28,249 [Thread-0]  INFO server:141 - Mapa recuperado{}
+2018-07-13 12:44:46,919 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 12:44:46,923 [Thread-0]  INFO server:37 - Thread1
+2018-07-13 12:44:46,923 [Thread-0]  INFO server:40 - Conexão do servidor iniciada
+2018-07-13 12:44:46,988 [Thread-0]  INFO server:147 - comandos recuperados: null
+2018-07-13 12:44:46,988 [Thread-0]  INFO server:148 - ultimo snapshot gerado: null
+2018-07-13 12:44:46,988 [Thread-0]  INFO server:149 - Mapa recuperado{}
+2018-07-13 12:45:35,372 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 12:45:35,377 [Thread-0]  INFO server:37 - Thread1
+2018-07-13 12:45:35,377 [Thread-0]  INFO server:40 - Conexão do servidor iniciada
+2018-07-13 12:45:35,451 [Thread-0]  INFO server:147 - comandos recuperados: null
+2018-07-13 12:45:35,451 [Thread-0]  INFO server:148 - ultimo snapshot gerado: null
+2018-07-13 12:45:35,451 [Thread-0]  INFO server:149 - Mapa recuperado{}
+2018-07-13 12:46:00,898 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 12:46:01,157 [Thread-0]  INFO server:37 - Thread1
+2018-07-13 12:46:01,158 [Thread-0]  INFO server:40 - Conexão do servidor iniciada
+2018-07-13 12:47:32,124 [main]  INFO client:36 - passou pelo main client
+2018-07-13 12:47:32,131 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 12:48:15,367 [Thread-0]  INFO server:147 - comandos recuperados: null
+2018-07-13 12:48:15,374 [Thread-0]  INFO server:148 - ultimo snapshot gerado: null
+2018-07-13 12:48:15,374 [Thread-0]  INFO server:149 - Mapa recuperado{}
+2018-07-13 12:48:15,378 [Thread-0]  INFO server:161 - Recebido: create/2/teste2
+2018-07-13 12:48:15,379 [Thread-0]  INFO server:172 - F1[]
+2018-07-13 12:48:15,379 [Thread-0]  INFO server:173 - Mapa{}
+2018-07-13 12:48:15,379 [Thread-0]  INFO server:174 - F2[]
+2018-07-13 12:48:15,379 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 12:48:15,380 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 12:48:15,380 [Thread-1]  INFO server:41 - Mapa{}
+2018-07-13 12:48:15,380 [Thread-1]  INFO server:43 - processamento
+2018-07-13 12:48:15,380 [Thread-0]  INFO server:175 - F3[create/2/teste2]
+2018-07-13 12:48:20,029 [main]  INFO client:36 - passou pelo main client
+2018-07-13 12:48:20,033 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 12:48:23,638 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 12:48:23,643 [Thread-0]  INFO server:37 - Thread1
+2018-07-13 12:48:23,644 [Thread-0]  INFO server:40 - Conexão do servidor iniciada
+2018-07-13 12:48:23,728 [Thread-0]  INFO server:147 - comandos recuperados: null
+2018-07-13 12:48:23,728 [Thread-0]  INFO server:148 - ultimo snapshot gerado: null
+2018-07-13 12:48:23,729 [Thread-0]  INFO server:149 - Mapa recuperado{}
+2018-07-13 12:48:39,926 [Thread-0]  INFO server:161 - Recebido: create/1/teste1
+2018-07-13 12:48:39,931 [Thread-0]  INFO server:172 - F1[]
+2018-07-13 12:48:39,932 [Thread-0]  INFO server:173 - Mapa{}
+2018-07-13 12:48:39,932 [Thread-0]  INFO server:174 - F2[create/1/teste1]
+2018-07-13 12:48:39,932 [Thread-0]  INFO server:175 - F3[create/1/teste1]
+2018-07-13 12:48:39,931 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 12:48:39,938 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 12:48:39,938 [Thread-1]  INFO server:41 - Mapa{}
+2018-07-13 12:48:39,938 [Thread-1]  INFO server:43 - processamento
+2018-07-13 12:48:53,033 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 12:48:53,037 [Thread-0]  INFO server:37 - Thread1
+2018-07-13 12:48:53,037 [Thread-0]  INFO server:40 - Conexão do servidor iniciada
+2018-07-13 12:48:53,146 [Thread-0]  INFO server:147 - comandos recuperados: [create/1/teste1]
+2018-07-13 12:48:53,146 [Thread-0]  INFO server:148 - ultimo snapshot gerado: {}
+2018-07-13 12:48:53,149 [Thread-0]  INFO server:149 - Mapa recuperado{1=teste1}
+2018-07-13 12:49:18,971 [main]  INFO client:36 - passou pelo main client
+2018-07-13 12:49:18,978 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 12:49:32,850 [Thread-0]  INFO server:161 - Recebido: create/22/teste22
+2018-07-13 12:49:32,851 [Thread-0]  INFO server:172 - F1[create/22/teste22]
+2018-07-13 12:49:32,851 [Thread-0]  INFO server:173 - Mapa{1=teste1}
+2018-07-13 12:49:32,851 [Thread-0]  INFO server:174 - F2[create/22/teste22]
+2018-07-13 12:49:32,852 [Thread-0]  INFO server:175 - F3[create/1/teste1, create/22/teste22]
+2018-07-13 12:49:32,853 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 12:49:32,853 [Thread-1]  INFO server:40 - Log em disco[create/22/teste22]
+2018-07-13 12:49:32,854 [Thread-1]  INFO server:41 - Mapa{1=teste1}
+2018-07-13 12:49:32,854 [Thread-1]  INFO server:43 - processamento
+2018-07-13 12:49:32,855 [Thread-1]  INFO server:63 - Mapa:{1=teste1, 22=teste22}
+2018-07-13 12:49:32,860 [Thread-1]  INFO server:64 - F2[]
+2018-07-13 12:50:16,062 [Thread-0]  INFO server:161 - Recebido: create/33/teste33
+2018-07-13 12:50:16,063 [Thread-0]  INFO server:172 - F1[create/33/teste33]
+2018-07-13 12:50:16,063 [Thread-0]  INFO server:173 - Mapa{1=teste1, 22=teste22}
+2018-07-13 12:50:16,063 [Thread-0]  INFO server:174 - F2[create/33/teste33]
+2018-07-13 12:50:16,064 [Thread-0]  INFO server:175 - F3[create/33/teste33]
+2018-07-13 12:50:16,064 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 12:50:16,064 [Thread-1]  INFO server:40 - Log em disco[create/33/teste33]
+2018-07-13 12:50:16,065 [Thread-1]  INFO server:41 - Mapa{1=teste1, 22=teste22}
+2018-07-13 12:50:16,065 [Thread-1]  INFO server:43 - processamento
+2018-07-13 12:50:16,065 [Thread-1]  INFO server:63 - Mapa:{1=teste1, 33=teste33, 22=teste22}
+2018-07-13 12:50:16,065 [Thread-1]  INFO server:64 - F2[create/33/teste33]
+2018-07-13 12:50:44,905 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 12:50:44,911 [Thread-0]  INFO server:37 - Thread1
+2018-07-13 12:50:44,911 [Thread-0]  INFO server:40 - Conexão do servidor iniciada
+2018-07-13 12:50:44,972 [Thread-0]  INFO server:147 - comandos recuperados: [create/33/teste33]
+2018-07-13 12:50:44,973 [Thread-0]  INFO server:148 - ultimo snapshot gerado: {1=teste1, 22=teste22}
+2018-07-13 12:50:44,973 [Thread-0]  INFO server:149 - Mapa recuperado{33=teste33}
+2018-07-13 12:58:37,684 [main]  INFO client:36 - passou pelo main client
+2018-07-13 12:58:37,707 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 12:58:37,714 [Thread-1]  INFO client:21 - passou pelo run da Thread 2
+2018-07-13 12:58:37,714 [Thread-1]  INFO client:24 - passou pelo run da Thread 2
+2018-07-13 12:59:05,959 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 12:59:05,966 [Thread-0]  INFO server:37 - Thread1
+2018-07-13 12:59:05,966 [Thread-0]  INFO server:40 - Conexão do servidor iniciada
+2018-07-13 12:59:06,027 [Thread-0]  INFO server:147 - comandos recuperados: null
+2018-07-13 12:59:06,027 [Thread-0]  INFO server:148 - ultimo snapshot gerado: null
+2018-07-13 12:59:06,028 [Thread-0]  INFO server:149 - Mapa recuperado{}
+2018-07-13 12:59:57,468 [Thread-0]  INFO server:161 - Recebido: create/62/teste62
+2018-07-13 12:59:57,469 [Thread-0]  INFO server:172 - F1[create/62/teste62]
+2018-07-13 12:59:57,469 [Thread-0]  INFO server:173 - Mapa{}
+2018-07-13 12:59:57,469 [Thread-0]  INFO server:174 - F2[create/62/teste62]
+2018-07-13 12:59:57,470 [Thread-0]  INFO server:175 - F3[create/62/teste62]
+2018-07-13 12:59:57,470 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 12:59:57,470 [Thread-1]  INFO server:40 - Log em disco[create/62/teste62]
+2018-07-13 12:59:57,470 [Thread-1]  INFO server:41 - Mapa{}
+2018-07-13 12:59:57,471 [Thread-1]  INFO server:43 - processamento
+2018-07-13 13:00:32,090 [Thread-0]  INFO server:161 - Recebido: create/91/teste91
+2018-07-13 13:00:32,098 [Thread-1]  INFO server:39 - Thread 2
+2018-07-13 13:00:32,098 [Thread-1]  INFO server:40 - Log em disco[]
+2018-07-13 13:00:32,098 [Thread-1]  INFO server:41 - Mapa{}
+2018-07-13 13:00:32,099 [Thread-1]  INFO server:43 - processamento
+2018-07-13 13:00:32,099 [Thread-0]  INFO server:172 - F1[]
+2018-07-13 13:00:32,099 [Thread-0]  INFO server:173 - Mapa{}
+2018-07-13 13:00:32,100 [Thread-0]  INFO server:174 - F2[]
+2018-07-13 13:00:32,100 [Thread-0]  INFO server:175 - F3[create/91/teste91]
+2018-07-13 13:01:30,992 [main]  INFO server:45 - iniciando aplicação
+2018-07-13 13:01:30,997 [Thread-0]  INFO server:37 - Thread1
+2018-07-13 13:01:30,997 [Thread-0]  INFO server:40 - Conexão do servidor iniciada
+2018-07-13 13:01:31,066 [Thread-0]  INFO server:147 - comandos recuperados: null
+2018-07-13 13:01:31,066 [Thread-0]  INFO server:148 - ultimo snapshot gerado: null
+2018-07-13 13:01:31,066 [Thread-0]  INFO server:149 - Mapa recuperado{}
+2018-07-13 13:01:59,549 [main]  INFO client:36 - passou pelo main client
+2018-07-13 13:01:59,554 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 13:01:59,558 [Thread-1]  INFO client:21 - passou pelo run da Thread 2
+2018-07-13 13:01:59,558 [Thread-1]  INFO client:24 - passou pelo run da Thread 2
+2018-07-13 13:08:32,439 [main]  INFO client:37 - passou pelo main client
+2018-07-13 13:08:41,534 [Thread-0]  INFO client:25 - passou pelo metodo run da thread 1
+2018-07-13 13:08:41,535 [Thread-1]  INFO client:21 - passou pelo run da Thread 2
+2018-07-13 13:08:41,535 [Thread-1]  INFO client:24 - passou pelo run da Thread 2
+2018-07-13 13:09:18,724 [main]  INFO client:37 - passou pelo main client

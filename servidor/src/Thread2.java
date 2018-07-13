@@ -23,7 +23,7 @@ public class Thread2 implements Runnable {
 
 
     @Override
-    synchronized public void run() {
+    public void run() {
 
         while (true) {
             try {

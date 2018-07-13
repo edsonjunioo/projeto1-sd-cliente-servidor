@@ -4,7 +4,7 @@ import java.util.concurrent.BlockingQueue;
 
 public class Thread3 implements Runnable {
 
-    private int min = 70;
+    static ObjectOutputStream disco;
 
     public Thread3(BlockingQueue<String> queuef3){
         RunServer.queuef3 = queuef3;
@@ -15,14 +15,14 @@ public class Thread3 implements Runnable {
     public static ObjectOutputStream getFile() throws Exception{
         FileOutputStream file = new FileOutputStream("./servidor/disco/disco.txt");
 
-        ObjectOutputStream disco = new ObjectOutputStream(file);
+        disco = new ObjectOutputStream(file);
 
         return disco;
     }
 
 
     @Override
-    synchronized public void run(){
+    public void run(){
 
         while (true) {
             try {
@@ -33,7 +33,7 @@ public class Thread3 implements Runnable {
 
 
             try {
-                ObjectOutputStream disco = getFile();
+                disco = getFile();
 
 
                 disco.writeObject(RunServer.queuef3.toString());

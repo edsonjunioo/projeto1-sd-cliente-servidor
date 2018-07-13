@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.util.Properties;
+import java.util.Scanner;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -44,17 +45,26 @@ public class RunClient {
         }
 
 
+        System.out.println("1 para Cliente-UDP ou 2 para Cliente-GRPC");
+        Scanner ler = new Scanner(System.in);
+        int option = ler.nextInt();
 
+        if(option == 1) {
+            System.out.println("Start Cliente UDP");
+            Thread1 thread1 = new Thread1(clientSocket);
+            Thread t1 = new Thread(thread1);
+            t1.start();
 
-        Thread1 thread1 = new Thread1(clientSocket);
-        Thread t1 = new Thread(thread1);
-        t1.start();
+            Thread2 thread2 = new Thread2(clientSocket);
+            Thread t2 = new Thread(thread2);
+            t2.start();
 
-        //Thread2 thread2 = new Thread2(clientSocket);
-        //Thread t2 = new Thread(thread2);
-        //t2.start();
+        }
 
-
+        if (option == 2){
+            System.out.println("Start Cliente GRPC");
+            System.out.println("Em contrução");
+        }
 
 
     }

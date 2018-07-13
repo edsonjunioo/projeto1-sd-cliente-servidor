@@ -1,12 +1,12 @@
 
 
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class SnapshotServer implements Runnable {
     private Thread2 thread2;
     private Thread3 thread3;
 
+    String vazio = null;
 
     private int min = 1;
 
@@ -17,9 +17,9 @@ public class SnapshotServer implements Runnable {
     public static ObjectOutputStream getSnapShot() throws Exception{
         FileOutputStream file = new FileOutputStream("./servidor/disco/snapshot.txt");
 
-        ObjectOutputStream disco = new ObjectOutputStream(file);
+        ObjectOutputStream snapshot = new ObjectOutputStream(file);
 
-        return disco;
+        return snapshot;
     }
 
     @Override
@@ -29,14 +29,22 @@ public class SnapshotServer implements Runnable {
                 Thread.sleep(this.min * 60 * 1000);
 
 
-                ObjectOutputStream disco = getSnapShot();
+                ObjectOutputStream snapShot = getSnapShot();
 
-                disco.writeObject(RunServer.map.toString());
+                snapShot.writeObject(RunServer.map.toString());
+                PrintWriter printWriter = new PrintWriter("./servidor/disco/disco.txt");
+                printWriter.println("");
+                RunServer.queuef3.clear();
+
+
+                System.out.println("\nSNAPSHOT gerado!");
+                System.out.println("Logs anteriores no disco descartados!\n");
+
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
 
-            System.out.println(": SNAPSHOT gerado");
+
 
         }
 
